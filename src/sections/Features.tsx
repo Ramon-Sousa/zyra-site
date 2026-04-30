@@ -1,33 +1,39 @@
+import imgTasks    from '../assets/features/features-tasks.png'
+import imgHabits   from '../assets/features/features-habits.png'
+import imgJournal  from '../assets/features/features-journal.png'
+import imgWorkouts from '../assets/features/features-workouts.png'
+import imgThemes   from '../assets/features/features-themes.png'
+
 const FEATURES = [
   {
     title: 'controle de tarefas',
     desc: 'eisenhower, kanban e planner semanal. prioritize o que importa sem burocracia.',
     tag: 'foco',
-    mockupSrc: '/src/assets/features/features-tasks.png',
+    mockupSrc: imgTasks,
   },
   {
     title: 'rastreador de hábitos',
     desc: 'streaks que você não quer quebrar. consistência real com números reais.',
     tag: 'consistência',
-    mockupSrc: '/src/assets/features/features-habits.png',
+    mockupSrc: imgHabits,
   },
   {
     title: 'journal',
     desc: 'diário pessoal, gratidão e reflexões. um espaço seguro para sua mente.',
     tag: 'mente',
-    mockupSrc: '/src/assets/features/features-journal.png',
+    mockupSrc: imgJournal,
   },
   {
     title: 'treinos',
     desc: 'monte seu programa, registre cargas e quebre seus próprios recordes.',
     tag: 'corpo',
-    mockupSrc: '/src/assets/features/features-workouts.png',
+    mockupSrc: imgWorkouts,
   },
   {
     title: 'personalização',
     desc: 'o sistema se adapta ao seu fluxo, não o contrário. cores, ícones e layouts.',
     tag: 'estilo',
-    mockupSrc: '/src/assets/features/features-themes.png',
+    mockupSrc: imgThemes,
   },
 ]
 

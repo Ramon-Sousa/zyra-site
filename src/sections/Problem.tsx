@@ -2,6 +2,7 @@
 // Each icon has a different animation-delay so they stagger naturally.
 // z-index: icons = 10, phone frame = 20 → icons pass behind the phone.
 
+import mockupMobile from '../assets/mockup-full-mobile.png'
 import icon1  from '../assets/icons/icon-lp-1.png'
 import icon2  from '../assets/icons/icon-lp-2.png'
 import icon3  from '../assets/icons/icon-lp-3.png'
@@ -144,7 +145,7 @@ export default function Problem() {
               {/* Phone — z-index 20, in front of icons */}
               <div className="absolute inset-0 flex items-center justify-center" style={{ zIndex: 20 }}>
                 <img
-                  src="/src/assets/mockup-full-mobile.png"
+                  src={mockupMobile}
                   alt=""
                   aria-hidden="true"
                   className="h-full w-auto object-contain rounded-[36px]"
