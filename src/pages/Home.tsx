@@ -20,7 +20,7 @@ export default function Home() {
         <Hero />
         <Problem />
         <Features />
-        {/* <Areas /> */}
+        <Areas />
         <Testimonials />
         <div className="flex flex-col gap-6 sm:gap-8 py-12 sm:py-16">
           <CrossPlatform />
