@@ -27,7 +27,7 @@ export default function Hero() {
           </div>
 
           <h1
-            className="animate-fade-up text-[clamp(24px,5.8vw,48px)] font-semibold leading-[1.01] tracking-[-2.5px] text-[var(--color-text-primary)] mb-6"
+            className="animate-fade-up text-[clamp(24px,5.8vw,48px)] font-semibold leading-[1.01] tracking-[-0.5px] sm:tracking-[-1.5px] lg:tracking-[-2.5px] text-[var(--color-text-primary)] mb-6"
             style={{ animationDelay: '300ms', fontFamily: 'var(--font-serif)' }}
           >
             Desperte a mulher que você mais admira em{' '}
