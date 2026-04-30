@@ -1,5 +1,9 @@
 # Zyra — Landing Page
 
+> **Este projeto não está disponível para replicação.** Este repositório serve como documentação das decisões de engenharia, arquitetura e estratégia de conversão por trás da construção do Zyra.
+
+---
+
 ## O Produto
 
 O **Zyra** é um sistema de organização pessoal desenhado especificamente para mulheres que buscam sair do "modo automático" e retomar o controle de suas rotinas. Ele substitui a fragmentação de múltiplas ferramentas (notas, planilhas, planners físicos) por um ecossistema centralizado que abrange mais de 16 áreas da vida — de finanças e carreira a bem-estar e espiritualidade.
