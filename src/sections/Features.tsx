@@ -7,13 +7,13 @@ import imgThemes   from '../assets/features/features-themes.png'
 const FEATURES = [
   {
     title: 'controle de tarefas',
-    desc: 'eisenhower, kanban e planner semanal. prioritize o que importa sem burocracia.',
+    desc: 'eisenhower, kanban e planner semanal. prioritize o que importa de forma automática e sem complicação.',
     tag: 'foco',
     mockupSrc: imgTasks,
   },
   {
     title: 'rastreador de hábitos',
-    desc: 'streaks que você não quer quebrar. consistência real com números reais.',
+    desc: 'Defina e acompanhe hábitos que você quer adicionar ou retirar da sua rotina. Visualize seu progresso e mantenha a motivação.',
     tag: 'consistência',
     mockupSrc: imgHabits,
   },
@@ -31,7 +31,7 @@ const FEATURES = [
   },
   {
     title: 'personalização',
-    desc: 'o sistema se adapta ao seu fluxo, não o contrário. cores, ícones e layouts.',
+    desc: 'o sistema se adapta ao seu gosto, não o contrário. cores, ícones e layouts.',
     tag: 'estilo',
     mockupSrc: imgThemes,
   },

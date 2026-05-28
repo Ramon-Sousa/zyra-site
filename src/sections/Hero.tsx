@@ -30,9 +30,9 @@ export default function Hero() {
             className="animate-fade-up text-[clamp(24px,5.8vw,48px)] font-semibold leading-[1.01] tracking-[-0.5px] sm:tracking-[-1.5px] lg:tracking-[-2.5px] text-[var(--color-text-primary)] mb-6"
             style={{ animationDelay: '300ms', fontFamily: 'var(--font-serif)' }}
           >
-            Desperte a mulher que você mais admira em{' '}
-            <em className="text-[var(--color-brand-burgundy)] not-italic block">
-              apenas 21 dias.
+            Transforme tarefas soltas e prioridades confusas em{' '}
+            <em className="text-[var(--color-brand-burgundy)]">
+              clareza visual.
             </em>
           </h1>
 
@@ -40,7 +40,7 @@ export default function Hero() {
             className="animate-fade-up text-[clamp(15px,1.6vw,18px)] text-[var(--color-text-secondary)] max-w-[42ch] leading-relaxed mb-10 font-normal"
             style={{ animationDelay: '420ms' }}
           >
-            Um sistema completo para um glow up em todas as áreas da sua vida. Mesmo que seu dia pareça curto demais.
+            Um sistema completo para organizar sua vida, mesmo que seu dia pareça curto demais.
           </p>
 
           <div
@@ -52,7 +52,7 @@ export default function Hero() {
               className="btn-fill inline-flex items-center gap-2 bg-[var(--color-brand-burgundy)] text-[var(--color-surface-page)] text-[15px] font-semibold rounded-[28px] h-[52px] px-7 transition-all duration-200 hover:-translate-y-0.5 active:scale-[0.97]"
               style={{ boxShadow: '0 8px 28px rgba(68,2,6,0.25)' }}
             >
-              Começar agora
+              Criar conta grátis
             </a>
           </div>
 
