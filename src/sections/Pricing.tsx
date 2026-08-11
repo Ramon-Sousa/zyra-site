@@ -104,17 +104,17 @@ export default function Pricing() {
       {/* Header */}
       <div className="text-center mb-14">
         <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-[var(--color-brand-burgundy)] mb-4">
-          Comece agora
+          Acesso vitalício
         </p>
         <h2
           className="text-[clamp(32px,4.2vw,56px)] font-semibold text-[var(--color-text-primary)] leading-[1.06] mb-4"
           style={{ fontFamily: "var(--font-serif)", letterSpacing: '-1.5px' }}
         >
-          Experimente o Zyra
-          <em className="italic text-[var(--color-brand-burgundy)]"> de graça</em>
+          Organize sua rotina.
+          <em className="italic text-[var(--color-brand-burgundy)]"> Viva com mais leveza.</em>
         </h2>
         <p className="text-[16px] text-[var(--color-text-secondary)] max-w-lg mx-auto leading-[1.75]">
-          Crie sua conta gratuitamente e descubra como organizar sua rotina em um só lugar. Sem compromisso.
+          Tenha o Zyra para sempre e reúna hábitos, tarefas, treinos e planos em um só lugar.
         </p>
       </div>
 

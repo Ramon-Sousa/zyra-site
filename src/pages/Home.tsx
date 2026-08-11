@@ -8,7 +8,6 @@ import Testimonials from '../sections/Testimonials'
 import CrossPlatform from '../sections/CrossPlatform'
 import CostBreakdown from '../sections/CostBreakdown'
 import Pricing from '../sections/Pricing'
-import HowItWorks from '../sections/HowItWorks'
 import FAQ from '../sections/FAQ'
 import FinalCTA from '../sections/FinalCTA'
 
@@ -27,7 +26,6 @@ export default function Home() {
           <CostBreakdown />
         </div>
         <Pricing />
-        <HowItWorks />
         <FAQ />
         <FinalCTA />
       </main>
