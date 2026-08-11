@@ -33,6 +33,7 @@ export default function Problem() {
   const lastFrameRef = useRef<number | null>(null)
   const [progress, setProgress] = useState(0)
   const [isMuted, setIsMuted] = useState(true)
+  const [videoAspectRatio, setVideoAspectRatio] = useState('9 / 16')
 
   const playVideo = useCallback(() => {
     const video = videoRef.current
@@ -105,6 +106,10 @@ export default function Problem() {
     }
 
     const syncCurrentTime = () => {
+      if (video.videoWidth > 0 && video.videoHeight > 0) {
+        setVideoAspectRatio(`${video.videoWidth} / ${video.videoHeight}`)
+      }
+
       if (Number.isFinite(video.currentTime)) {
         simulatedTimeRef.current = Math.max(simulatedTimeRef.current, video.currentTime)
       }
@@ -193,8 +198,10 @@ export default function Problem() {
 
         <div
           ref={playerRef}
-          className="relative mx-auto overflow-hidden rounded-[28px] bg-black w-full max-w-[420px]"
+          className="relative mx-auto overflow-hidden rounded-[28px] w-full max-w-[420px]"
           style={{
+            aspectRatio: videoAspectRatio,
+            background: 'transparent',
             border: '1px solid rgba(249,246,240,0.12)',
             boxShadow: '0 32px 80px rgba(0,0,0,0.38)',
             ['--vsl-progress-bg' as string]: 'rgba(249,246,240,0.18)',
@@ -205,7 +212,7 @@ export default function Problem() {
           <video
             ref={videoRef}
             src={VIDEO_URL}
-            className="block w-full aspect-[9/16] object-contain"
+            className="absolute inset-0 block h-full w-full object-contain"
             autoPlay
             muted
             playsInline
