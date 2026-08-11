@@ -3,7 +3,6 @@ import Footer from '../components/Footer'
 import Hero from '../sections/Hero'
 import Problem from '../sections/Problem'
 import Features from '../sections/Features'
-import Areas from '../sections/Areas'
 import Testimonials from '../sections/Testimonials'
 import CrossPlatform from '../sections/CrossPlatform'
 import CostBreakdown from '../sections/CostBreakdown'
@@ -19,7 +18,6 @@ export default function Home() {
         <Hero />
         <Problem />
         <Features />
-        <Areas />
         <Testimonials />
         <div className="flex flex-col gap-6 sm:gap-8 py-12 sm:py-16">
           <CrossPlatform />

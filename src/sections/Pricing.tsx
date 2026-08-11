@@ -2,8 +2,8 @@ const CHECKOUT_URL = 'https://pay.cakto.com.br/kse9sb5'
 
 /*
  * Cards de planos ocultos temporariamente.
- * Estratégia atual: convidar o usuário a testar a aplicação gratuitamente,
- * sem expor preços, planos ou assinaturas.
+ * Estratégia anterior: cards de planos recorrentes ocultos enquanto a página
+ * destaca a oferta de acesso vitalício.
  *
  * const PLANS = [
  *   {
@@ -182,7 +182,7 @@ export default function Pricing() {
                 boxShadow: '0 8px 28px rgba(0,0,0,0.22)',
               }}
             >
-              Quero acesso vitalício
+              Garantir acesso
               <svg width="13" height="13" viewBox="0 0 13 13" fill="none">
                 <path d="M2 6.5h9M8 3l3.5 3.5L8 10" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
               </svg>

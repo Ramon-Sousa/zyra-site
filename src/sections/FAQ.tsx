@@ -2,8 +2,32 @@ import { useState } from 'react'
 
 const FAQS = [
   {
-    q: 'Posso testar antes de assinar?',
-    a: 'Sim. Ao criar sua conta gratuita você já tem acesso ao Zyra e pode explorar o app, configurar seu desafio e testar as primeiras funcionalidades antes de assinar qualquer plano.',
+    q: 'Preciso baixar algum app na loja?',
+    a: 'Não. O Zyra funciona direto no navegador do celular e do computador, e pode ser instalado na tela inicial como qualquer outro app. Você abre e usa na hora.',
+  },
+  {
+    q: 'Funciona no iPhone e no Android?',
+    a: 'Sim. O Zyra funciona no iPhone, Android, tablet e computador. Seus dados ficam sincronizados para você acessar sua rotina de qualquer dispositivo.',
+  },
+  {
+    q: 'É pagamento único mesmo, sem mensalidade?',
+    a: 'Sim. A oferta atual é de acesso vitalício com pagamento único, sem mensalidade recorrente.',
+  },
+  {
+    q: 'Preciso entender de tecnologia?',
+    a: 'Não. O Zyra foi feito para ser simples: você acessa, organiza suas áreas e acompanha sua rotina sem configurações complicadas.',
+  },
+  {
+    q: 'E se eu não gostar?',
+    a: 'Você tem 7 dias de garantia. Se não gostar por qualquer motivo, é só entrar em contato e devolvemos 100% do valor.',
+  },
+  {
+    q: 'Meus dados ficam guardados?',
+    a: 'Sim. Seus dados ficam salvos na sua conta e sincronizados para você continuar de onde parou sempre que acessar o Zyra.',
+  },
+  {
+    q: 'Como garanto meu acesso?',
+    a: 'Você garante seu acesso pelo checkout seguro e recebe a liberação do Zyra para explorar o app, configurar seu desafio e organizar sua rotina em um só lugar.',
   },
   {
     q: 'Como funciona a assinatura?',
@@ -18,8 +42,8 @@ const FAQS = [
     a: 'Você tem 7 dias de garantia em todos os planos. Se não gostar por qualquer motivo, é só entrar em contato e devolvemos 100% do valor. Sem perguntas, sem burocracia. Risco zero.',
   },
   {
-    q: 'Quais funcionalidades são gratuitas?',
-    a: 'No plano gratuito você pode criar e concluir o primeiro hábito e a primeira tarefa do dia. Funcionalidades como journal, treinos, temas personalizados, streaks completos e desafios avançados são exclusivas dos planos pagos.',
+    q: 'O que está incluso no acesso?',
+    a: 'O acesso inclui desafio personalizado, hábitos, tarefas, journal, treinos, controle financeiro, temas personalizados e recursos para acompanhar sua evolução dentro do Zyra.',
   },
   {
     q: 'Posso cancelar quando quiser?',

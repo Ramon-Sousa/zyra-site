@@ -48,7 +48,7 @@ export default function FinalCTA() {
             className="btn-fill inline-flex items-center gap-2.5 bg-[var(--color-surface-page)] text-[var(--color-brand-burgundy)] text-[15px] font-semibold rounded-[28px] h-[54px] px-8 transition-all hover:-translate-y-0.5 active:scale-[0.97]"
             style={{ boxShadow: '0 10px 36px rgba(0,0,0,0.22)' }}
           >
-            Quero começar agora
+            Garantir acesso
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
               <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>

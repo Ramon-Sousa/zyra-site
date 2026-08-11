@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 
 type Tab = 'visao' | 'habitos' | 'financas' | 'tarefas' | 'treinos' | 'estudos'
 
@@ -254,16 +254,17 @@ const PANELS: Record<Tab, React.ReactNode> = {
   estudos:  <PanelEstudos />,
 }
 
+function formatDashboardDate() {
+  const now = new Date()
+  const days = ['dom', 'seg', 'ter', 'qua', 'qui', 'sex', 'sáb']
+  const months = ['jan', 'fev', 'mar', 'abr', 'mai', 'jun', 'jul', 'ago', 'set', 'out', 'nov', 'dez']
+
+  return `${days[now.getDay()]}, ${now.getDate()} ${months[now.getMonth()]}`
+}
+
 export default function DashboardMockup() {
   const [activeTab, setActiveTab] = useState<Tab>('visao')
-  const [dateStr, setDateStr] = useState('')
-
-  useEffect(() => {
-    const now = new Date()
-    const days = ['dom', 'seg', 'ter', 'qua', 'qui', 'sex', 'sáb']
-    const months = ['jan', 'fev', 'mar', 'abr', 'mai', 'jun', 'jul', 'ago', 'set', 'out', 'nov', 'dez']
-    setDateStr(`${days[now.getDay()]}, ${now.getDate()} ${months[now.getMonth()]}`)
-  }, [])
+  const [dateStr] = useState(formatDashboardDate)
 
   const greeting = (() => {
     const h = new Date().getHours()

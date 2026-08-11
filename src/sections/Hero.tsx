@@ -52,7 +52,7 @@ export default function Hero() {
               className="btn-fill inline-flex items-center gap-2 bg-[var(--color-brand-burgundy)] text-[var(--color-surface-page)] text-[15px] font-semibold rounded-[28px] h-[52px] px-7 transition-all duration-200 hover:-translate-y-0.5 active:scale-[0.97]"
               style={{ boxShadow: '0 8px 28px rgba(68,2,6,0.25)' }}
             >
-              Criar conta grátis
+              Garantir acesso
             </a>
           </div>
 

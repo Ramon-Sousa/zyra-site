@@ -3,8 +3,7 @@ import logoWhite from '../assets/logo-h-brand.png'
 const NAV_LINKS = [
   { label: 'Funcionalidades', href: '#features' },
   { label: 'Depoimentos', href: '#testimonials' },
-  { label: 'Planos', href: '#pricing' },
-  { label: 'Como acessar', href: '#how-it-works' },
+  { label: 'Acesso vitalício', href: '#pricing' },
   { label: 'FAQ', href: '#faq' },
 ]
 
@@ -66,13 +65,11 @@ export default function Nav() {
             Entrar
           </a>
           <a
-            href="https://zyra.meuglowmode.site/register"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="#pricing"
             className="bg-[var(--color-surface-page)] text-[var(--color-text-primary)] px-5 py-2.5 rounded-full text-[13px] font-bold transition-all duration-200 hover:scale-[1.02] active:scale-[0.97] leading-none whitespace-nowrap flex-shrink-0"
             style={{ boxShadow: '0 2px 8px rgba(0,0,0,0.14)' }}
           >
-            Criar conta grátis
+            Garantir acesso
           </a>
         </div>
       </nav>
@@ -85,12 +82,10 @@ export default function Nav() {
         <img src={logoWhite} 
           style={{ backgroundColor: '#FEFCF9' }} alt="Zyra" className="w-20 h-7 object-contain flex-shrink-0 rounded-full" />
         <a
-          href="https://zyra.meuglowmode.site/register"
-          target="_blank"
-          rel="noopener noreferrer"
+          href="#pricing"
           className="bg-[var(--color-surface-page)] text-[var(--color-text-primary)] px-4 py-2 rounded-full text-[13px] font-bold leading-none active:scale-[0.97] transition-transform flex-shrink-0"
         >
-          Criar conta grátis
+          Garantir acesso
         </a>
       </nav>
     </div>

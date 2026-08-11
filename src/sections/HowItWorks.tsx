@@ -1,8 +1,8 @@
 const STEPS = [
   {
     number: '01',
-    title: 'Crie sua conta gratuita',
-    desc: 'Basta um e-mail e uma senha. Em menos de um minuto você já está dentro do Zyra — sem burocracia.',
+    title: 'Garanta seu acesso',
+    desc: 'Escolha o acesso ao Zyra e finalize com segurança. Em poucos minutos você já pode organizar sua rotina em um só lugar.',
     icon: (
       <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
         <rect x="2" y="4" width="18" height="14" rx="3" stroke="currentColor" strokeWidth="1.5"/>
@@ -13,8 +13,8 @@ const STEPS = [
   },
   {
     number: '02',
-    title: 'Acesse e conheça o Zyra',
-    desc: 'Explore o app, configure seu desafio personalizado e veja como hábitos, tarefas e treinos ficam organizados em um só lugar.',
+    title: 'Entre e conheça o Zyra',
+    desc: 'Explore o app, configure seu desafio personalizado e veja como hábitos, tarefas e treinos ficam organizados juntos.',
     icon: (
       <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
         <circle cx="11" cy="11" r="9" stroke="currentColor" strokeWidth="1.5"/>

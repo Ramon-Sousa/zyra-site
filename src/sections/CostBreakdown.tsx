@@ -1,3 +1,5 @@
+import logoBrand from '../assets/logo-brand.png'
+
 const COSTS = [
   {
     label: 'Apps de Produtividade',
@@ -154,17 +156,15 @@ export default function CostBreakdown() {
                 className="w-8 h-8 rounded-[10px] flex items-center justify-center flex-shrink-0"
                 style={{ background: 'rgba(249,246,240,0.12)' }}
               >
-                <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-                  <path d="M2.5 7l3 3 6-6" stroke="rgba(130,200,150,0.9)" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
+                <img src={logoBrand} alt="Zyra" className="h-5 w-5 object-contain" />
               </div>
               <div>
                 <p className="text-[13px] font-semibold" style={{ color: 'rgba(249,246,240,0.9)' }}>Zyra — Tudo incluso</p>
-                <p className="text-[11px]" style={{ color: 'rgba(249,246,240,0.4)' }}>Um único app, sem fragmentação</p>
+                <p className="text-[11px]" style={{ color: 'rgba(249,246,240,0.4)' }}>Acesso vitalício, sem fragmentação</p>
               </div>
             </div>
             <p className="text-[18px] sm:text-[22px] font-semibold" style={{ fontFamily: 'var(--font-serif)', color: '#D7C6A8', letterSpacing: '-0.5px' }}>
-              R$ 64,90/ano
+              R$ 27,90
             </p>
           </div>
         </div>
