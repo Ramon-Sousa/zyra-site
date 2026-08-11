@@ -1,4 +1,4 @@
-const REGISTER_URL = 'https://zyra.meuglowmode.site/register'
+const CHECKOUT_URL = 'https://pay.cakto.com.br/kse9sb5'
 
 /*
  * Cards de planos ocultos temporariamente.
@@ -73,7 +73,7 @@ const REGISTER_URL = 'https://zyra.meuglowmode.site/register'
  */
 
 const FEATURES = [
-  'Acesse de quaquer dispositivo',
+  'Acesse de qualquer dispositivo',
   'Desafio personalizado de rotina',
   'Rastreador de hábitos',
   'Centralizador de tarefas',
@@ -135,7 +135,7 @@ export default function Pricing() {
               style={{ background: 'var(--color-surface-page)', color: 'var(--color-brand-burgundy)' }}
             >
               <span className="w-1.5 h-1.5 rounded-full" style={{ background: 'currentColor', opacity: 0.55 }} />
-              Acesso gratuito
+              Acesso vitalício
             </span>
           </div>
 
@@ -145,18 +145,34 @@ export default function Pricing() {
               className="text-[clamp(26px,3.4vw,34px)] font-semibold leading-[1.12] mb-3"
               style={{ fontFamily: "var(--font-serif)", color: 'var(--color-surface-page)', letterSpacing: '-0.6px' }}
             >
-              Crie sua conta grátis
+              Invista uma única vez e tenha acesso para sempre!
             </p>
             <p
               className="text-[14px] leading-[1.7] mb-8"
               style={{ color: 'rgba(249,246,240,0.5)' }}
             >
-              Teste a aplicação completa e veja na prática como o Zyra ajuda você a manter o foco no dia a dia.
+              Acesso vitalício ao Zyra.
             </p>
+
+            {/* Price */}
+            <div className="mb-8">
+              <span
+                className="text-[14px]"
+                style={{ color: 'rgba(249,246,240,0.5)' }}
+              >
+                Por apenas
+              </span>
+              <p
+                className="text-[clamp(42px,6vw,58px)] font-semibold leading-none mt-1"
+                style={{ fontFamily: "var(--font-serif)", color: 'var(--color-surface-page)', letterSpacing: '-1.5px' }}
+              >
+                R$ 27,90
+              </p>
+            </div>
 
             {/* CTA */}
             <a
-              href={REGISTER_URL}
+              href={CHECKOUT_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="btn-fill flex items-center justify-center gap-2 w-full h-[52px] rounded-[24px] text-[14px] font-semibold transition-all active:scale-[0.98] mb-8"
@@ -166,7 +182,7 @@ export default function Pricing() {
                 boxShadow: '0 8px 28px rgba(0,0,0,0.22)',
               }}
             >
-              Criar conta grátis
+              Quero acesso vitalício
               <svg width="13" height="13" viewBox="0 0 13 13" fill="none">
                 <path d="M2 6.5h9M8 3l3.5 3.5L8 10" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
