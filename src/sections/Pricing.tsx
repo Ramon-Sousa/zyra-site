@@ -1,3 +1,5 @@
+import { appendCurrentUtmParams } from '../lib/campaignParams'
+
 const CHECKOUT_URL = 'https://pay.cakto.com.br/kse9sb5'
 
 /*
@@ -99,6 +101,8 @@ function Check() {
 }
 
 export default function Pricing() {
+  const checkoutUrl = appendCurrentUtmParams(CHECKOUT_URL)
+
   return (
     <section id="pricing" className="py-16 sm:py-24 px-5 max-w-3xl mx-auto">
       {/* Header */}
@@ -172,7 +176,7 @@ export default function Pricing() {
 
             {/* CTA */}
             <a
-              href={CHECKOUT_URL}
+              href={checkoutUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="btn-fill flex items-center justify-center gap-2 w-full h-[52px] rounded-[24px] text-[14px] font-semibold transition-all active:scale-[0.98] mb-8"
