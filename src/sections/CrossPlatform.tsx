@@ -89,7 +89,13 @@ function MobileWireframe() {
   )
 }
 
-export default function CrossPlatform() {
+type CrossPlatformProps = {
+  variant?: 'default' | 'humor'
+}
+
+export default function CrossPlatform({ variant = 'default' }: CrossPlatformProps) {
+  const isHumor = variant === 'humor'
+
   return (
     <section
       className="relative overflow-hidden py-16 sm:py-24 px-5 mx-4 sm:mx-5 rounded-3xl md:rounded-[40px]"
@@ -105,17 +111,28 @@ export default function CrossPlatform() {
         {/* Header */}
         <div className="text-center mb-12 sm:mb-20">
           <p className="text-[11px] font-bold uppercase tracking-[0.3em] text-[rgba(249,246,240,0.3)] mb-6">
-            Multiplataforma
+            {isHumor ? 'Leve com você' : 'Multiplataforma'}
           </p>
           <h2
             className="text-[clamp(28px,4.5vw,54px)] font-semibold leading-[1.06] text-[var(--color-surface-page)] mb-6"
             style={{ fontFamily: 'var(--font-serif)', letterSpacing: '-1.5px' }}
           >
-            Uma experiência.<br />
-            <em className="italic" style={{ color: '#D7C6A8' }}>Todas as telas.</em>
+            {isHumor ? (
+              <>
+                Seu journal sempre perto.<br />
+                <em className="italic" style={{ color: '#D7C6A8' }}>No momento em que o estresse aparece.</em>
+              </>
+            ) : (
+              <>
+                Uma experiência.<br />
+                <em className="italic" style={{ color: '#D7C6A8' }}>Todas as telas.</em>
+              </>
+            )}
           </h2>
           <p className="text-[15px] sm:text-[16px] max-w-[46ch] mx-auto leading-[1.75] text-[rgba(249,246,240,0.45)]">
-            Windows, Mac, iPhone, Android ou Linux. O Zyra roda perfeitamente no navegador de qualquer dispositivo. Seus dados sincronizados em tempo real.
+            {isHumor
+              ? 'Registre seu humor, organize pensamentos e acompanhe sua rotina no celular ou computador. Seus dados ficam sincronizados para você continuar de onde parou.'
+              : 'Windows, Mac, iPhone, Android ou Linux. O Zyra roda perfeitamente no navegador de qualquer dispositivo. Seus dados sincronizados em tempo real.'}
           </p>
         </div>
 
@@ -174,4 +191,3 @@ export default function CrossPlatform() {
     </section>
   )
 }
-

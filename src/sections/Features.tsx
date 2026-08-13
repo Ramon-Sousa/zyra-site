@@ -2,6 +2,8 @@ import imgDiet      from '../assets/features/features-diet-screen.png'
 import imgFinances  from '../assets/features/features-finances-screen.png'
 import imgHabits    from '../assets/features/features-habits-screen.png'
 import imgJournal   from '../assets/features/features-journal-mood-screen.png'
+import imgJournalReflection from '../assets/features/features-journal-reflection.png'
+import imgMoodControl from '../assets/features/features-mood-control.png'
 import imgPomodoro  from '../assets/features/features-pomodoro-screen.png'
 import imgStudies   from '../assets/features/features-studies-screen.png'
 import imgThemes   from '../assets/features/features-themes.png'
@@ -67,38 +69,75 @@ const FEATURES = [
   },
 ]
 
-function FeatureImage({ src, alt }: { src: string; alt: string }) {
+const HUMOR_FEATURES = [
+  {
+    title: 'Journal',
+    description:
+      'Registre pensamentos, gatilhos e reflexões do dia para tirar peso da cabeça e enxergar padrões antes que eles virem sobrecarga.',
+    eyebrow: 'Clareza emocional',
+    content: <FeatureImage src={imgJournalReflection} alt="Tela de journal do Zyra" fit="contain" />,
+  },
+  {
+    title: 'Controle de Estresse/Humor',
+    description:
+      'Acompanhe seu humor, entenda quando o estresse aparece e organize pequenas ações para recuperar leveza na rotina.',
+    eyebrow: 'Humor',
+    content: <FeatureImage src={imgMoodControl} alt="Tela de controle de humor do Zyra" fit="contain" />,
+  },
+]
+
+function FeatureImage({ src, alt, fit = 'cover' }: { src: string; alt: string; fit?: 'cover' | 'contain' }) {
   return (
     <img
       src={src}
       alt={alt}
-      className="h-full w-full rounded-[28px] border-[2px] border-[#F2E9DE] object-cover object-top shadow-[0_24px_80px_-12px_rgba(0,0,0,0.15)]"
+      className={`h-full w-full rounded-[28px] border-[2px] border-[#F2E9DE] bg-[#F4ECE2] object-top shadow-[0_24px_80px_-12px_rgba(0,0,0,0.15)] ${
+        fit === 'contain' ? 'object-contain' : 'object-cover'
+      }`}
       draggable={false}
     />
   )
 }
 
-export default function Features() {
+type FeaturesProps = {
+  variant?: 'default' | 'humor'
+}
+
+export default function Features({ variant = 'default' }: FeaturesProps) {
+  const isHumor = variant === 'humor'
+  const features = isHumor ? HUMOR_FEATURES : FEATURES
+
   return (
     <section id="features" className="py-16 sm:py-24 lg:py-32 px-5 bg-[var(--color-surface-page)]">
       <div className="max-w-5xl mx-auto">
         <div className="text-center mb-14">
           <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-[var(--color-brand-burgundy)] mb-4">
-            Funcionalidades
+            {isHumor ? 'Controle de estresse' : 'Funcionalidades'}
           </p>
           <h2
             className="text-[clamp(32px,4.2vw,56px)] font-semibold text-[var(--color-text-primary)] leading-[1.06] mb-4"
             style={{ fontFamily: 'var(--font-serif)', letterSpacing: '-1.5px' }}
           >
-            Tudo que você precisa
-            <em className="italic text-[var(--color-brand-burgundy)]"> em um só lugar</em>
+            {isHumor ? (
+              <>
+                Entenda seu humor
+                <em className="italic text-[var(--color-brand-burgundy)]"> antes do estresse dominar</em>
+              </>
+            ) : (
+              <>
+                Tudo que você precisa
+                <em className="italic text-[var(--color-brand-burgundy)]"> em um só lugar</em>
+              </>
+            )}
           </h2>
           <p className="text-[15px] sm:text-[16px] text-[var(--color-text-secondary)] max-w-2xl mx-auto leading-[1.75]">
-            Acompanhe rotina, foco, corpo, mente e planejamento em uma experiência integrada.
+            {isHumor
+              ? 'Use o journal e o controle de humor para perceber gatilhos, aliviar a mente e criar uma rotina mais leve.'
+              : 'Acompanhe rotina, foco, corpo, mente e planejamento em uma experiência integrada.'}
           </p>
         </div>
 
-        <StickyScroll content={FEATURES} />
+        <StickyScroll content={features} />
       </div>
     </section>
   )

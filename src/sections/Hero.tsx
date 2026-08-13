@@ -6,7 +6,43 @@ import pf04 from '../assets/ps/hero/pf_04.webp'
 
 const HERO_AVATARS = [pf01, pf02, pf03, pf04]
 
-export default function Hero() {
+type HeroProps = {
+  variant?: 'default' | 'humor'
+}
+
+const COPY = {
+  default: {
+    badge: 'Sistema de organização',
+    title: (
+      <>
+        Transforme tarefas soltas e prioridades confusas em{' '}
+        <em className="text-[var(--color-brand-burgundy)]">
+          clareza visual.
+        </em>
+      </>
+    ),
+    subtitle: 'Um sistema completo para organizar sua vida, mesmo que seu dia pareça curto demais.',
+    cta: 'Garantir acesso',
+  },
+  humor: {
+    badge: 'Livre-se do estresse',
+    title: (
+      <>
+        Não deixe que o estresse acabe com{' '}
+        <em className="text-[var(--color-brand-burgundy)]">
+          sua rotina!
+        </em>
+      </>
+    ),
+    subtitle:
+      'O estresse crônico é o maior gatilho para ansiedade e depressão, tenha uma rotina mais leve organizando sua vida em um único app.',
+    cta: 'Quero controlar meu estresse',
+  },
+}
+
+export default function Hero({ variant = 'default' }: HeroProps) {
+  const copy = COPY[variant]
+
   return (
     <section className="min-h-[100dvh] px-5 pt-24 sm:pt-28 pb-12 sm:pb-16 max-w-5xl mx-auto flex flex-col justify-center">
       <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.1fr] gap-12 lg:gap-16 items-center">
@@ -23,24 +59,21 @@ export default function Hero() {
             }}
           >
             <span className="animate-pulse-dot w-1.5 h-1.5 rounded-full bg-[var(--color-brand-burgundy)]" />
-            Sistema de organização
+            {copy.badge}
           </div>
 
           <h1
             className="animate-fade-up text-[clamp(24px,5.8vw,48px)] font-semibold leading-[1.01] tracking-[-0.5px] sm:tracking-[-1.5px] lg:tracking-[-2.5px] text-[var(--color-text-primary)] mb-6"
             style={{ animationDelay: '300ms', fontFamily: 'var(--font-serif)' }}
           >
-            Transforme tarefas soltas e prioridades confusas em{' '}
-            <em className="text-[var(--color-brand-burgundy)]">
-              clareza visual.
-            </em>
+            {copy.title}
           </h1>
 
           <p
             className="animate-fade-up text-[clamp(15px,1.6vw,18px)] text-[var(--color-text-secondary)] max-w-[42ch] leading-relaxed mb-10 font-normal"
             style={{ animationDelay: '420ms' }}
           >
-            Um sistema completo para organizar sua vida, mesmo que seu dia pareça curto demais.
+            {copy.subtitle}
           </p>
 
           <div
@@ -52,7 +85,7 @@ export default function Hero() {
               className="btn-fill inline-flex items-center gap-2 bg-[var(--color-brand-burgundy)] text-[var(--color-surface-page)] text-[15px] font-semibold rounded-[28px] h-[52px] px-7 transition-all duration-200 hover:-translate-y-0.5 active:scale-[0.97]"
               style={{ boxShadow: '0 8px 28px rgba(68,2,6,0.25)' }}
             >
-              Garantir acesso
+              {copy.cta}
             </a>
           </div>
 

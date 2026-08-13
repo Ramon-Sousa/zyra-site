@@ -24,7 +24,8 @@ createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/humor" element={<Home variant="humor" />} />
+        <Route path="*" element={<Home />} />
       </Routes>
     </BrowserRouter>
   </StrictMode>,

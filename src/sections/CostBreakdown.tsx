@@ -39,7 +39,35 @@ const COSTS = [
   },
 ]
 
-export default function CostBreakdown() {
+const HUMOR_COSTS = [
+  {
+    ...COSTS[0],
+    label: 'Apps de Notas e Journal',
+    sub: 'Anotações, diário, check-ins de humor, etc.',
+    price: 'R$ 180/ano',
+  },
+  {
+    ...COSTS[1],
+    label: 'Apps de Bem-estar',
+    sub: 'Meditação, humor, respiração e controle de ansiedade.',
+    price: 'R$ 240/ano',
+  },
+  {
+    ...COSTS[2],
+    label: 'Rotina espalhada',
+    sub: 'Gatilhos e preocupações perdidos entre vários apps.',
+    price: 'Estresse diário',
+  },
+]
+
+type CostBreakdownProps = {
+  variant?: 'default' | 'humor'
+}
+
+export default function CostBreakdown({ variant = 'default' }: CostBreakdownProps) {
+  const isHumor = variant === 'humor'
+  const costs = isHumor ? HUMOR_COSTS : COSTS
+
   return (
     <div className="max-w-5xl mx-auto px-4 sm:px-5">
       <div
@@ -70,14 +98,25 @@ export default function CostBreakdown() {
             className="text-[clamp(28px,4.5vw,60px)] font-semibold leading-[1.04] mb-4"
             style={{ fontFamily: 'var(--font-serif)', letterSpacing: '-1.5px', color: 'var(--color-surface-page)' }}
           >
-            Quanto custa a{' '}
-            <em className="italic" style={{ color: '#D7C6A8' }}>desorganização?</em>
+            {isHumor ? (
+              <>
+                O estresse inconsciente de se organizar com{' '}
+                <em className="italic" style={{ color: '#D7C6A8' }}>vários apps</em>
+              </>
+            ) : (
+              <>
+                Quanto custa a{' '}
+                <em className="italic" style={{ color: '#D7C6A8' }}>desorganização?</em>
+              </>
+            )}
           </h2>
           <p
             className="text-[15px] sm:text-[16px] leading-[1.75] mb-10"
             style={{ color: 'rgba(249,246,240,0.52)' }}
           >
-            Assinar vários apps e não ter visão do todo custa caro. Veja o impacto real de não ter tudo no mesmo lugar.
+            {isHumor
+              ? 'Quando tarefas, pensamentos, metas e emoções ficam espalhados, o cérebro continua tentando lembrar de tudo. É assim que a rotina fica pesada sem você perceber.'
+              : 'Assinar vários apps e não ter visão do todo custa caro. Veja o impacto real de não ter tudo no mesmo lugar.'}
           </p>
 
           {/* Cost card — inner dark panel */}
@@ -97,12 +136,12 @@ export default function CostBreakdown() {
 
             {/* Cost rows */}
             <div className="flex flex-col">
-              {COSTS.map((c, i) => (
+              {costs.map((c, i) => (
                 <div
                   key={c.label}
                   className="flex items-center gap-4 px-5 sm:px-6 py-4 sm:py-5"
                   style={{
-                    borderBottom: i < COSTS.length - 1 ? '1px solid rgba(249,246,240,0.07)' : undefined,
+                    borderBottom: i < costs.length - 1 ? '1px solid rgba(249,246,240,0.07)' : undefined,
                   }}
                 >
                   {/* Icon */}
@@ -135,13 +174,13 @@ export default function CostBreakdown() {
               style={{ background: 'rgba(0,0,0,0.2)', borderTop: '1px solid rgba(249,246,240,0.12)' }}
             >
               <p className="text-[13px] font-medium" style={{ color: 'rgba(249,246,240,0.45)' }}>
-                Custo Total Estimado
+                {isHumor ? 'Carga mental acumulada' : 'Custo Total Estimado'}
               </p>
               <p
                 className="text-[clamp(24px,3.5vw,40px)] font-semibold leading-none"
                 style={{ fontFamily: 'var(--font-serif)', color: 'var(--color-surface-page)', letterSpacing: '-1px' }}
               >
-                R$ 670/ano
+                {isHumor ? 'Todo dia' : 'R$ 670/ano'}
               </p>
             </div>
           </div>
@@ -159,8 +198,12 @@ export default function CostBreakdown() {
                 <img src={logoBrand} alt="Zyra" className="h-5 w-5 object-contain" />
               </div>
               <div>
-                <p className="text-[13px] font-semibold" style={{ color: 'rgba(249,246,240,0.9)' }}>Zyra — Tudo incluso</p>
-                <p className="text-[11px]" style={{ color: 'rgba(249,246,240,0.4)' }}>Acesso vitalício, sem fragmentação</p>
+                <p className="text-[13px] font-semibold" style={{ color: 'rgba(249,246,240,0.9)' }}>
+                  {isHumor ? 'Zyra — Journal, humor e rotina' : 'Zyra — Tudo incluso'}
+                </p>
+                <p className="text-[11px]" style={{ color: 'rgba(249,246,240,0.4)' }}>
+                  {isHumor ? 'Organização emocional em um único app' : 'Acesso vitalício, sem fragmentação'}
+                </p>
               </div>
             </div>
             <p className="text-[18px] sm:text-[22px] font-semibold" style={{ fontFamily: 'var(--font-serif)', color: '#D7C6A8', letterSpacing: '-0.5px' }}>

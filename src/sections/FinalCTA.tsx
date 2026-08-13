@@ -1,4 +1,10 @@
-export default function FinalCTA() {
+type FinalCTAProps = {
+  variant?: 'default' | 'humor'
+}
+
+export default function FinalCTA({ variant = 'default' }: FinalCTAProps) {
+  const isHumor = variant === 'humor'
+
   return (
     <div className="max-w-5xl mx-auto px-4 sm:px-5 mb-16 sm:mb-24">
       <div
@@ -22,23 +28,35 @@ export default function FinalCTA() {
             className="text-[11px] font-bold uppercase tracking-[0.22em] mb-6"
             style={{ color: 'rgba(249,246,240,0.4)' }}
           >
-            Não adie seu progresso
+            {isHumor ? 'Comece pela mente' : 'Não adie seu progresso'}
           </p>
 
           <h2
             className="text-[clamp(28px,4.5vw,60px)] font-semibold text-[var(--color-surface-page)] leading-[1.04] mb-5"
             style={{ fontFamily: "var(--font-serif)", letterSpacing: '-1.5px' }}
           >
-            Sua rotina não vai
-            <br />se organizar{' '}
-            <em className="italic" style={{ color: '#D7C6A8' }}>sozinha.</em>
+            {isHumor ? (
+              <>
+                Seu estresse não precisa
+                <br />comandar{' '}
+                <em className="italic" style={{ color: '#D7C6A8' }}>sua rotina.</em>
+              </>
+            ) : (
+              <>
+                Sua rotina não vai
+                <br />se organizar{' '}
+                <em className="italic" style={{ color: '#D7C6A8' }}>sozinha.</em>
+              </>
+            )}
           </h2>
 
           <p
             className="text-[15px] sm:text-[16px] leading-[1.75] mb-8 sm:mb-10 max-w-[44ch] mx-auto"
             style={{ color: 'rgba(249,246,240,0.58)' }}
           >
-            Um único lugar pra tudo que você precisa fazer. Sem fricção, sem complexidade.
+            {isHumor
+              ? 'Registre o que sente, acompanhe seu humor e organize seus dias com mais consciência em um único app.'
+              : 'Um único lugar pra tudo que você precisa fazer. Sem fricção, sem complexidade.'}
           </p>
 
           <a
@@ -48,14 +66,14 @@ export default function FinalCTA() {
             className="btn-fill inline-flex items-center gap-2.5 bg-[var(--color-surface-page)] text-[var(--color-brand-burgundy)] text-[15px] font-semibold rounded-[28px] h-[54px] px-8 transition-all hover:-translate-y-0.5 active:scale-[0.97]"
             style={{ boxShadow: '0 10px 36px rgba(0,0,0,0.22)' }}
           >
-            Garantir acesso
+            {isHumor ? 'Quero controlar meu estresse' : 'Garantir acesso'}
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
               <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
           </a>
 
           <p className="text-[12px] mt-5" style={{ color: '#D7C6A8' }}>
-            7 dias de garantia · Cancele quando quiser
+            {isHumor ? 'Acesso vitalício · Comece em poucos minutos' : '7 dias de garantia · Cancele quando quiser'}
           </p>
         </div>
       </div>

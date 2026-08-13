@@ -86,6 +86,21 @@ const FEATURES = [
   'Notificações em tempo real',
 ]
 
+const HUMOR_FEATURES = [
+  'Journal diário para esvaziar a mente',
+  'Controle de humor e estresse',
+  'Registro de gatilhos emocionais',
+  'Rotina organizada em um único app',
+  'Rastreador de hábitos',
+  'Centralizador de tarefas',
+  'Organizador de treinos',
+  'Controle financeiro',
+  'Estudos e Pomodoro',
+  'Temas personalizados',
+  'Notificações em tempo real',
+  'Acesso pelo celular e computador',
+]
+
 function Check() {
   return (
     <svg width="14" height="14" viewBox="0 0 14 14" fill="none" className="flex-shrink-0 mt-[1px]">
@@ -100,8 +115,14 @@ function Check() {
   )
 }
 
-export default function Pricing() {
+type PricingProps = {
+  variant?: 'default' | 'humor'
+}
+
+export default function Pricing({ variant = 'default' }: PricingProps) {
+  const isHumor = variant === 'humor'
   const checkoutUrl = appendCurrentUtmParams(CHECKOUT_URL)
+  const features = isHumor ? HUMOR_FEATURES : FEATURES
 
   return (
     <section id="pricing" className="py-16 sm:py-24 px-5 max-w-3xl mx-auto">
@@ -114,11 +135,22 @@ export default function Pricing() {
           className="text-[clamp(32px,4.2vw,56px)] font-semibold text-[var(--color-text-primary)] leading-[1.06] mb-4"
           style={{ fontFamily: "var(--font-serif)", letterSpacing: '-1.5px' }}
         >
-          Organize sua rotina.
-          <em className="italic text-[var(--color-brand-burgundy)]"> Viva com mais leveza.</em>
+          {isHumor ? (
+            <>
+              Controle seu estresse.
+              <em className="italic text-[var(--color-brand-burgundy)]"> Acompanhe seu humor.</em>
+            </>
+          ) : (
+            <>
+              Organize sua rotina.
+              <em className="italic text-[var(--color-brand-burgundy)]"> Viva com mais leveza.</em>
+            </>
+          )}
         </h2>
         <p className="text-[16px] text-[var(--color-text-secondary)] max-w-lg mx-auto leading-[1.75]">
-          Tenha o Zyra para sempre e reúna hábitos, tarefas, treinos e planos em um só lugar.
+          {isHumor
+            ? 'Use o Zyra para entender seus gatilhos, registrar sua rotina emocional e reduzir a carga mental do dia.'
+            : 'Tenha o Zyra para sempre e reúna hábitos, tarefas, treinos e planos em um só lugar.'}
         </p>
       </div>
 
@@ -149,13 +181,13 @@ export default function Pricing() {
               className="text-[clamp(26px,3.4vw,34px)] font-semibold leading-[1.12] mb-3"
               style={{ fontFamily: "var(--font-serif)", color: 'var(--color-surface-page)', letterSpacing: '-0.6px' }}
             >
-              Invista uma única vez e tenha acesso para sempre!
+              {isHumor ? 'Comece hoje a aliviar sua rotina.' : 'Invista uma única vez e tenha acesso para sempre!'}
             </p>
             <p
               className="text-[14px] leading-[1.7] mb-8"
               style={{ color: 'rgba(249,246,240,0.5)' }}
             >
-              Acesso vitalício ao Zyra.
+              {isHumor ? 'Journal, humor e organização pessoal em uma experiência simples.' : 'Acesso vitalício ao Zyra.'}
             </p>
 
             {/* Price */}
@@ -179,14 +211,14 @@ export default function Pricing() {
               href={checkoutUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-fill flex items-center justify-center gap-2 w-full h-[52px] rounded-[24px] text-[14px] font-semibold transition-all active:scale-[0.98] mb-8"
+              className="btn-fill flex min-h-[52px] w-full items-center justify-center gap-2 rounded-[24px] px-4 py-3 text-center text-[14px] font-semibold leading-tight transition-all active:scale-[0.98] mb-8"
               style={{
                 background: 'var(--color-surface-page)',
                 color: 'var(--color-brand-burgundy)',
                 boxShadow: '0 8px 28px rgba(0,0,0,0.22)',
               }}
             >
-              Garantir acesso
+              {isHumor ? 'Controle seu estresse, acompanhe seu humor.' : 'Garantir acesso'}
               <svg width="13" height="13" viewBox="0 0 13 13" fill="none">
                 <path d="M2 6.5h9M8 3l3.5 3.5L8 10" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
@@ -203,12 +235,12 @@ export default function Pricing() {
               className="text-[11px] font-bold uppercase tracking-[0.12em] mb-4"
               style={{ color: 'rgba(249,246,240,0.28)' }}
             >
-              O que você vai explorar
+              {isHumor ? 'Incluso no acesso' : 'O que você vai explorar'}
             </p>
 
             {/* Features */}
             <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-              {FEATURES.map((f) => (
+              {features.map((f) => (
                 <li key={f} className="flex items-start gap-2.5">
                   <Check />
                   <span className="text-[13px] leading-snug" style={{ color: 'rgba(249,246,240,0.62)' }}>

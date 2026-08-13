@@ -19,7 +19,23 @@ const PLATEAUS: Plateau[] = [
   { start: 0.78, duration: 360 },
 ]
 
-export default function Problem() {
+type ProblemProps = {
+  variant?: 'default' | 'humor'
+}
+
+const COPY = {
+  default: {
+    title: 'Veja em 2 minutos como sua rotina passará a ser organizada.',
+    cta: 'QUERO COMEÇAR AGORA',
+  },
+  humor: {
+    title: 'Veja em 1 minuto como você vai eliminar o estresse da sua rotina.',
+    cta: 'QUERO CONTROLAR MEU ESTRESSE',
+  },
+}
+
+export default function Problem({ variant = 'default' }: ProblemProps) {
+  const copy = COPY[variant]
   const videoRef = useRef<HTMLVideoElement | null>(null)
   const playerRef = useRef<HTMLDivElement | null>(null)
   const animationRef = useRef<number | null>(null)
@@ -34,6 +50,7 @@ export default function Problem() {
   const [progress, setProgress] = useState(0)
   const [isMuted, setIsMuted] = useState(true)
   const [videoAspectRatio, setVideoAspectRatio] = useState('9 / 16')
+  const ctaHref = variant === 'humor' ? '#pricing' : CHECKOUT_URL
 
   const playVideo = useCallback(() => {
     const video = videoRef.current
@@ -192,7 +209,7 @@ export default function Problem() {
             className="text-[clamp(30px,4.2vw,52px)] font-semibold leading-[1.06] mb-8"
             style={{ fontFamily: 'var(--font-serif)', letterSpacing: '-1.2px', color: 'var(--color-surface-page)' }}
           >
-            Veja em 2 minutos como sua rotina passará a ser organizada.
+            {copy.title}
           </h2>
         </div>
 
@@ -299,13 +316,13 @@ export default function Problem() {
 
         <div className="mt-7 flex justify-center">
           <a
-            href={CHECKOUT_URL}
-            target="_blank"
-            rel="noopener noreferrer"
+            href={ctaHref}
+            target={variant === 'humor' ? undefined : '_blank'}
+            rel={variant === 'humor' ? undefined : 'noopener noreferrer'}
             className="btn-fill inline-flex h-[52px] w-full max-w-[420px] items-center justify-center rounded-[28px] bg-[var(--color-surface-page)] px-7 text-[14px] font-semibold text-[var(--color-brand-burgundy)] transition-all duration-200 hover:-translate-y-0.5 active:scale-[0.97]"
             style={{ boxShadow: '0 8px 28px rgba(0,0,0,0.22)' }}
           >
-            QUERO COMEÇAR AGORA
+            {copy.cta}
           </a>
         </div>
       </div>

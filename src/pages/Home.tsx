@@ -3,6 +3,7 @@ import Footer from '../components/Footer'
 import Hero from '../sections/Hero'
 import Problem from '../sections/Problem'
 import Features from '../sections/Features'
+import BonusFeatures from '../sections/BonusFeatures'
 import Testimonials from '../sections/Testimonials'
 import CrossPlatform from '../sections/CrossPlatform'
 import CostBreakdown from '../sections/CostBreakdown'
@@ -10,22 +11,29 @@ import Pricing from '../sections/Pricing'
 import FAQ from '../sections/FAQ'
 import FinalCTA from '../sections/FinalCTA'
 
-export default function Home() {
+type HomeProps = {
+  variant?: 'default' | 'humor'
+}
+
+export default function Home({ variant = 'default' }: HomeProps) {
+  const isHumor = variant === 'humor'
+
   return (
     <>
       <Nav />
       <main>
-        <Hero />
-        <Problem />
-        <Features />
+        <Hero variant={variant} />
+        <Problem variant={variant} />
+        <Features variant={variant} />
+        {isHumor ? <BonusFeatures /> : null}
         <Testimonials />
         <div className="flex flex-col gap-6 sm:gap-8 py-12 sm:py-16">
-          <CrossPlatform />
-          <CostBreakdown />
+          <CrossPlatform variant={variant} />
+          <CostBreakdown variant={variant} />
         </div>
-        <Pricing />
+        <Pricing variant={variant} />
         <FAQ />
-        <FinalCTA />
+        <FinalCTA variant={variant} />
       </main>
       <Footer />
     </>
