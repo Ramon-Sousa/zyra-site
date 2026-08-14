@@ -1,11 +1,3 @@
-const UTM_KEYS = [
-  'utm_source',
-  'utm_medium',
-  'utm_campaign',
-  'utm_content',
-  'utm_term',
-] as const
-
 export function appendCurrentUtmParams(url: string): string {
   if (typeof window === 'undefined') return url
 
@@ -13,8 +5,10 @@ export function appendCurrentUtmParams(url: string): string {
     const checkoutUrl = new URL(url)
     const currentParams = new URLSearchParams(window.location.search)
 
-    for (const key of UTM_KEYS) {
-      const value = currentParams.get(key)?.trim()
+    for (const [key, rawValue] of currentParams.entries()) {
+      if (!key.toLowerCase().startsWith('utm_')) continue
+
+      const value = rawValue.trim()
       if (value) checkoutUrl.searchParams.set(key, value)
     }
 

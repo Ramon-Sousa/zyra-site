@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { SpeakerHigh, SpeakerSlash } from '@phosphor-icons/react'
+import { appendCurrentUtmParams } from '../lib/campaignParams'
 
 const CHECKOUT_URL = 'https://pay.cakto.com.br/kse9sb5'
 const VIDEO_URL = 'https://meuglowmode.site/server/assets/videos/vsl-lp-zyra.mp4'
@@ -50,7 +51,7 @@ export default function Problem({ variant = 'default' }: ProblemProps) {
   const [progress, setProgress] = useState(0)
   const [isMuted, setIsMuted] = useState(true)
   const [videoAspectRatio, setVideoAspectRatio] = useState('9 / 16')
-  const ctaHref = variant === 'humor' ? '#pricing' : CHECKOUT_URL
+  const ctaHref = appendCurrentUtmParams(CHECKOUT_URL)
 
   const playVideo = useCallback(() => {
     const video = videoRef.current
@@ -317,8 +318,8 @@ export default function Problem({ variant = 'default' }: ProblemProps) {
         <div className="mt-7 flex justify-center">
           <a
             href={ctaHref}
-            target={variant === 'humor' ? undefined : '_blank'}
-            rel={variant === 'humor' ? undefined : 'noopener noreferrer'}
+            target="_blank"
+            rel="noopener noreferrer"
             className="btn-fill inline-flex h-[52px] w-full max-w-[420px] items-center justify-center rounded-[28px] bg-[var(--color-surface-page)] px-7 text-[14px] font-semibold text-[var(--color-brand-burgundy)] transition-all duration-200 hover:-translate-y-0.5 active:scale-[0.97]"
             style={{ boxShadow: '0 8px 28px rgba(0,0,0,0.22)' }}
           >

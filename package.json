@@ -9,6 +9,7 @@
     "build:hostinger": "npm run build && npm run verify:static",
     "lint": "eslint .",
     "preview": "vite preview",
+    "verify:campaign": "node scripts/verify-campaign-params.mjs",
     "preview:hostinger": "vite preview --host 0.0.0.0",
     "verify:static": "node scripts/verify-static-build.mjs"
   },

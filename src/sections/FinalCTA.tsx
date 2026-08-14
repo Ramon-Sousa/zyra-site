@@ -1,9 +1,14 @@
+import { appendCurrentUtmParams } from '../lib/campaignParams'
+
+const REGISTER_URL = 'https://zyra.meuglowmode.site/register'
+
 type FinalCTAProps = {
   variant?: 'default' | 'humor'
 }
 
 export default function FinalCTA({ variant = 'default' }: FinalCTAProps) {
   const isHumor = variant === 'humor'
+  const registerUrl = appendCurrentUtmParams(REGISTER_URL)
 
   return (
     <div className="max-w-5xl mx-auto px-4 sm:px-5 mb-16 sm:mb-24">
@@ -60,7 +65,7 @@ export default function FinalCTA({ variant = 'default' }: FinalCTAProps) {
           </p>
 
           <a
-            href="https://zyra.meuglowmode.site/register"
+            href={registerUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="btn-fill inline-flex items-center gap-2.5 bg-[var(--color-surface-page)] text-[var(--color-brand-burgundy)] text-[15px] font-semibold rounded-[28px] h-[54px] px-8 transition-all hover:-translate-y-0.5 active:scale-[0.97]"
