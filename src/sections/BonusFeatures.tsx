@@ -1,10 +1,10 @@
-const imgDiet = '/img dieta.png'
-const imgFinances = '/img financas.png'
-const imgHabits = '/img habitos.png'
-const imgPomodoro = '/img pomodo.png'
-const imgStudies = '/img estudos.png'
-const imgTasks = '/img tarefas.png'
-const imgWorkouts = '/img treinos.png'
+const imgDiet = '/img/dieta.webp'
+const imgFinances = '/img/financas.webp'
+const imgHabits = '/img/habitos.webp'
+const imgPomodoro = '/img/pomodo.webp'
+const imgStudies = '/img/estudos.webp'
+const imgTasks = '/img/tarefas.webp'
+const imgWorkouts = '/img/treinos.webp'
 
 const BONUS_FEATURES = [
   {
@@ -87,6 +87,8 @@ export default function BonusFeatures() {
                 <img
                   src={feature.image}
                   alt=""
+                  loading="lazy"
+                  decoding="async"
                   className="h-full w-full object-contain object-center drop-shadow-[0_16px_26px_rgba(68,2,6,0.18)]"
                   draggable={false}
                 />

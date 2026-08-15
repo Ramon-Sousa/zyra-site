@@ -1,7 +1,7 @@
-import glowUp01 from '../assets/social-proof/glow-up-01.png'
-import glowUp02 from '../assets/social-proof/glow-up-02.png'
-import glowUp03 from '../assets/social-proof/glow-up-03.png'
-import glowUp04 from '../assets/social-proof/glow-up-04.png'
+import glowUp01 from '../assets/social-proof/glow-up-01.webp'
+import glowUp02 from '../assets/social-proof/glow-up-02.webp'
+import glowUp03 from '../assets/social-proof/glow-up-03.webp'
+import glowUp04 from '../assets/social-proof/glow-up-04.webp'
 
 const PROOFS = [
   { src: glowUp01, alt: 'Depoimento de cliente sobre o Zyra ser organizado e completo' },
@@ -55,7 +55,8 @@ export default function SocialProof() {
                 alt={proof.alt}
                 className="block w-full h-[190px] sm:h-[250px] object-contain"
                 draggable={false}
-                loading={index < PROOFS.length ? 'eager' : 'lazy'}
+                loading="lazy"
+                decoding="async"
               />
             </figure>
           ))}

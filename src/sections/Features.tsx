@@ -1,15 +1,15 @@
 import { StickyScroll } from '../components/ui/sticky-scroll-reveal'
 
-const imgDiet = '/img dieta.png'
-const imgFinances = '/img financas.png'
-const imgHabits = '/img habitos.png'
-const imgJournal = '/img humor.png'
-const imgJournalReflection = '/img humor-1.png'
-const imgMoodControl = '/img humor.png'
-const imgPomodoro = '/img pomodo.png'
-const imgStudies = '/img estudos.png'
-const imgTasks = '/img tarefas.png'
-const imgWorkouts = '/img treinos.png'
+const imgDiet = '/img/dieta.webp'
+const imgFinances = '/img/financas.webp'
+const imgHabits = '/img/habitos.webp'
+const imgJournal = '/img/humor.webp'
+const imgJournalReflection = '/img/humor-1.webp'
+const imgMoodControl = '/img/humor.webp'
+const imgPomodoro = '/img/pomodo.webp'
+const imgStudies = '/img/estudos.webp'
+const imgTasks = '/img/tarefas.webp'
+const imgWorkouts = '/img/treinos.webp'
 
 const FEATURES = [
   {
@@ -99,6 +99,8 @@ function FeatureImage({ src, alt, fit = 'cover' }: { src: string; alt: string; f
     <img
       src={src}
       alt={alt}
+      loading="lazy"
+      decoding="async"
       className={`h-full w-full object-top drop-shadow-[0_24px_60px_rgba(0,0,0,0.16)] ${
         fit === 'contain' ? 'object-contain' : 'object-cover'
       }`}

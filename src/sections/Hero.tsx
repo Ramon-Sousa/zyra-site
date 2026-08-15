@@ -116,6 +116,8 @@ export default function Hero({ variant = 'default' }: HeroProps) {
             alt=""
             aria-hidden="true"
             className="w-full h-auto block lg:scale-[1.40] lg:translate-x-8"
+            fetchPriority="high"
+            decoding="async"
             draggable={false}
           />
         </div>

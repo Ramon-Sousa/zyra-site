@@ -1,5 +1,5 @@
 import { appendCurrentUtmParams } from '../lib/campaignParams'
-import offerCardVisual from '../assets/offer/offer-card-visual.png'
+import offerCardVisual from '../assets/offer/offer-card-visual.webp'
 
 const CHECKOUT_URL = 'https://pay.cakto.com.br/kse9sb5'
 
@@ -205,6 +205,8 @@ export default function Pricing({ variant = 'default' }: PricingProps) {
                   src={offerCardVisual}
                   alt="Prévia do Zyra com rotinas, alimentação, treino e autocuidado"
                   className="relative w-full max-w-[260px] sm:max-w-[320px] h-auto drop-shadow-[0_24px_32px_rgba(0,0,0,0.35)]"
+                  loading="lazy"
+                  decoding="async"
                   draggable={false}
                 />
               </div>
