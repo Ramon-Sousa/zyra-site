@@ -15,13 +15,13 @@ const COPY = {
     badge: 'Sistema de organização',
     title: (
       <>
-        Transforme tarefas soltas e prioridades confusas em{' '}
+        Desperte a mulher que você mais admira e transforme sua realidade{' '}
         <em className="text-[var(--color-brand-burgundy)]">
-          clareza visual.
+          em apenas 21 dias.
         </em>
       </>
     ),
-    subtitle: 'Um sistema completo para organizar sua vida, mesmo que seu dia pareça curto demais.',
+    subtitle: 'Um sistema completo para um glow up em todas as áreas da sua vida. Mesmo que seu dia pareça curto demais.',
     cta: 'Garantir acesso',
   },
   humor: {

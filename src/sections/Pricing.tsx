@@ -1,4 +1,5 @@
 import { appendCurrentUtmParams } from '../lib/campaignParams'
+import offerCardVisual from '../assets/offer/offer-card-visual.png'
 
 const CHECKOUT_URL = 'https://pay.cakto.com.br/kse9sb5'
 
@@ -157,7 +158,7 @@ export default function Pricing({ variant = 'default' }: PricingProps) {
       {/* Single invite card */}
       <div className="max-w-xl mx-auto pt-6">
         <div
-          className="scroll-reveal relative rounded-[28px] flex flex-col transition-transform duration-300 hover:-translate-y-1"
+          className="relative rounded-[28px] flex flex-col transition-transform duration-300 hover:-translate-y-1"
           style={{
             background: 'var(--color-text-primary)',
             border: '1px solid rgba(249,246,240,0.1)',
@@ -176,33 +177,75 @@ export default function Pricing({ variant = 'default' }: PricingProps) {
           </div>
 
           <div className="p-7 sm:p-10 flex flex-col flex-1">
-            {/* Title */}
-            <p
-              className="text-[clamp(26px,3.4vw,34px)] font-semibold leading-[1.12] mb-3"
-              style={{ fontFamily: "var(--font-serif)", color: 'var(--color-surface-page)', letterSpacing: '-0.6px' }}
-            >
-              {isHumor ? 'Comece hoje a aliviar sua rotina.' : 'Invista uma única vez e tenha acesso para sempre!'}
-            </p>
-            <p
-              className="text-[14px] leading-[1.7] mb-8"
-              style={{ color: 'rgba(249,246,240,0.5)' }}
-            >
-              {isHumor ? 'Journal, humor e organização pessoal em uma experiência simples.' : 'Acesso vitalício ao Zyra.'}
-            </p>
+            <div className="grid gap-7 sm:grid-cols-[1.05fr_0.95fr] sm:items-center mb-8">
+              <div>
+                {/* Title */}
+                <p
+                  className="text-[clamp(26px,3.4vw,34px)] font-semibold leading-[1.12] mb-3"
+                  style={{ fontFamily: "var(--font-serif)", color: 'var(--color-surface-page)', letterSpacing: '-0.6px' }}
+                >
+                  {isHumor ? 'Comece hoje a aliviar sua rotina.' : 'Invista uma única vez e tenha acesso para sempre!'}
+                </p>
+                <p
+                  className="text-[14px] leading-[1.7] mb-6"
+                  style={{ color: 'rgba(249,246,240,0.5)' }}
+                >
+                  {isHumor ? 'Journal, humor e organização pessoal em uma experiência simples.' : 'Acesso vitalício ao Zyra.'}
+                </p>
+
+                <div
+                  className="inline-flex items-center rounded-full px-3 py-1 text-[11px] font-bold"
+                  style={{
+                    background: 'rgba(249,246,240,0.09)',
+                    border: '1px solid rgba(249,246,240,0.12)',
+                    color: '#D7C6A8',
+                  }}
+                >
+                  Economize R$ 642,10 no primeiro ano
+                </div>
+              </div>
+
+              <div className="relative flex justify-center sm:justify-end">
+                <div
+                  className="absolute inset-x-10 bottom-3 h-16 rounded-full blur-2xl"
+                  style={{ background: 'rgba(249,246,240,0.14)' }}
+                />
+                <img
+                  src={offerCardVisual}
+                  alt="Prévia do Zyra com rotinas, alimentação, treino e autocuidado"
+                  className="relative w-full max-w-[260px] sm:max-w-[320px] h-auto drop-shadow-[0_24px_32px_rgba(0,0,0,0.35)]"
+                  draggable={false}
+                />
+              </div>
+            </div>
 
             {/* Price */}
-            <div className="mb-8">
-              <span
-                className="text-[14px]"
-                style={{ color: 'rgba(249,246,240,0.5)' }}
-              >
-                Por apenas
-              </span>
+            <div className="mb-8 rounded-[22px] p-5" style={{ background: 'rgba(249,246,240,0.06)', border: '1px solid rgba(249,246,240,0.1)' }}>
+              <div className="flex flex-wrap items-center gap-2 mb-3">
+                <span className="text-[12px] font-medium" style={{ color: 'rgba(249,246,240,0.45)' }}>
+                  De
+                </span>
+                <span className="text-[15px] font-semibold line-through decoration-[rgba(249,246,240,0.45)]" style={{ color: 'rgba(249,246,240,0.38)' }}>
+                  R$ 670/ano
+                </span>
+                <span className="text-[12px] font-medium" style={{ color: 'rgba(249,246,240,0.45)' }}>
+                  por acesso vitalício
+                </span>
+              </div>
               <p
-                className="text-[clamp(42px,6vw,58px)] font-semibold leading-none mt-1"
+                className="text-[15px] font-semibold mb-1"
+                style={{ color: 'rgba(249,246,240,0.6)' }}
+              >
+                Até 3x de
+              </p>
+              <p
+                className="text-[clamp(44px,6vw,62px)] font-semibold leading-none"
                 style={{ fontFamily: "var(--font-serif)", color: 'var(--color-surface-page)', letterSpacing: '-1.5px' }}
               >
-                R$ 27,90
+                R$ 9,30
+              </p>
+              <p className="text-[13px] mt-3" style={{ color: 'rgba(249,246,240,0.45)' }}>
+                ou R$ 27,90 à vista
               </p>
             </div>
 
@@ -218,7 +261,7 @@ export default function Pricing({ variant = 'default' }: PricingProps) {
                 boxShadow: '0 8px 28px rgba(0,0,0,0.22)',
               }}
             >
-              {isHumor ? 'Controle seu estresse, acompanhe seu humor.' : 'Garantir acesso'}
+              Estou pronta para começar!
               <svg width="13" height="13" viewBox="0 0 13 13" fill="none">
                 <path d="M2 6.5h9M8 3l3.5 3.5L8 10" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
               </svg>

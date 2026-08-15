@@ -15,6 +15,13 @@ const conversionSections = [
       "appendCurrentUtmParams(REGISTER_URL)",
     ],
   },
+  {
+    path: 'src/sections/Pricing.tsx',
+    required: [
+      "import { appendCurrentUtmParams } from '../lib/campaignParams'",
+      "appendCurrentUtmParams(CHECKOUT_URL)",
+    ],
+  },
 ]
 
 const helperSource = readFileSync('src/lib/campaignParams.ts', 'utf8')
@@ -23,6 +30,16 @@ let failed = false
 
 if (!helperSource.includes("key.toLowerCase().startsWith('utm_')")) {
   console.error('src/lib/campaignParams.ts must preserve every utm_* parameter, including custom campaign keys.')
+  failed = true
+}
+
+if (!helperSource.includes('localStorage')) {
+  console.error('src/lib/campaignParams.ts must persist paid utm_* parameters in localStorage.')
+  failed = true
+}
+
+if (!helperSource.includes('utm_medium') || !helperSource.includes('organic')) {
+  console.error('src/lib/campaignParams.ts must detect organic visits and avoid replacing stored paid attribution with organic UTMs.')
   failed = true
 }
 

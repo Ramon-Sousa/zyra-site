@@ -92,23 +92,14 @@ export default function CostBreakdown({ variant = 'default' }: CostBreakdownProp
             className="text-[11px] font-bold uppercase tracking-[0.22em] mb-5"
             style={{ color: 'rgba(249,246,240,0.4)' }}
           >
-            O cenário atual
+            Vantagens
           </p>
           <h2
             className="text-[clamp(28px,4.5vw,60px)] font-semibold leading-[1.04] mb-4"
             style={{ fontFamily: 'var(--font-serif)', letterSpacing: '-1.5px', color: 'var(--color-surface-page)' }}
           >
-            {isHumor ? (
-              <>
-                O estresse inconsciente de se organizar com{' '}
-                <em className="italic" style={{ color: '#D7C6A8' }}>vários apps</em>
-              </>
-            ) : (
-              <>
-                Quanto custa a{' '}
-                <em className="italic" style={{ color: '#D7C6A8' }}>desorganização?</em>
-              </>
-            )}
+            Por que escolher o{' '}
+            <em className="italic" style={{ color: '#D7C6A8' }}>Zyra?</em>
           </h2>
           <p
             className="text-[15px] sm:text-[16px] leading-[1.75] mb-10"
@@ -130,7 +121,7 @@ export default function CostBreakdown({ variant = 'default' }: CostBreakdownProp
               style={{ borderColor: 'rgba(249,246,240,0.08)', background: 'rgba(249,246,240,0.04)' }}
             >
               <p className="text-[10px] font-bold uppercase tracking-[0.18em]" style={{ color: 'rgba(249,246,240,0.35)' }}>
-                O Cenário Atual
+                Vantagens
               </p>
             </div>
 
