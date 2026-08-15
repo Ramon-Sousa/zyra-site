@@ -22,7 +22,6 @@ const COPY = {
       </>
     ),
     subtitle: 'Um sistema completo para um glow up em todas as áreas da sua vida. Mesmo que seu dia pareça curto demais.',
-    cta: 'Garantir acesso',
   },
   humor: {
     badge: 'Livre-se do estresse',
@@ -36,7 +35,6 @@ const COPY = {
     ),
     subtitle:
       'O estresse crônico é o maior gatilho para ansiedade e depressão, tenha uma rotina mais leve organizando sua vida em um único app.',
-    cta: 'Quero controlar meu estresse',
   },
 }
 
@@ -75,19 +73,6 @@ export default function Hero({ variant = 'default' }: HeroProps) {
           >
             {copy.subtitle}
           </p>
-
-          <div
-            className="animate-fade-up flex flex-col sm:flex-row items-start sm:items-center gap-4"
-            style={{ animationDelay: '520ms' }}
-          >
-            <a
-              href="#pricing"
-              className="btn-fill inline-flex items-center gap-2 bg-[var(--color-brand-burgundy)] text-[var(--color-surface-page)] text-[15px] font-semibold rounded-[28px] h-[52px] px-7 transition-all duration-200 hover:-translate-y-0.5 active:scale-[0.97]"
-              style={{ boxShadow: '0 8px 28px rgba(68,2,6,0.25)' }}
-            >
-              {copy.cta}
-            </a>
-          </div>
 
           {/* Social proof */}
           <div
