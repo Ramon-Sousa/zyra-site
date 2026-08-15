@@ -320,8 +320,7 @@ export default function Problem({ variant = 'default' }: ProblemProps) {
             href={ctaHref}
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-fill inline-flex h-[52px] w-full max-w-[420px] items-center justify-center rounded-[28px] bg-[var(--color-surface-page)] px-7 text-[14px] font-semibold text-[var(--color-brand-burgundy)] transition-all duration-200 hover:-translate-y-0.5 active:scale-[0.97]"
-            style={{ boxShadow: '0 8px 28px rgba(0,0,0,0.22)' }}
+            className="btn-fill checkout-cta inline-flex h-[52px] w-full max-w-[420px] items-center justify-center rounded-[28px] px-7 text-[14px] font-semibold transition-all duration-200 hover:-translate-y-0.5 active:scale-[0.97]"
           >
             {copy.cta}
           </a>

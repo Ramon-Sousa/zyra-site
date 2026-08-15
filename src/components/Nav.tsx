@@ -1,8 +1,8 @@
 const PILL_STYLE = {
-  background: 'rgba(26,20,16,0.96)',
+  background: '#8F0008',
   backdropFilter: 'blur(20px)',
   WebkitBackdropFilter: 'blur(20px)',
-  boxShadow: '0 12px 36px rgba(0,0,0,0.22), 0 0 0 1px rgba(255,255,255,0.06) inset',
+  boxShadow: '0 12px 36px rgba(68,2,6,0.28), 0 0 0 1px rgba(255,255,255,0.1) inset',
 } as const
 
 const MONTHS = [

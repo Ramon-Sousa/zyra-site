@@ -159,6 +159,27 @@
   transform: translateX(0);
 }
 
+.checkout-cta {
+  background: #009C3E;
+  color: #03180B;
+  box-shadow: 0 10px 30px rgba(0, 156, 62, 0.28);
+}
+
+.checkout-cta::before {
+  background: #007A32;
+}
+
+.checkout-cta:hover,
+.checkout-cta:focus-visible {
+  color: #FFFFFF;
+  box-shadow: 0 14px 36px rgba(0, 122, 50, 0.34);
+}
+
+.checkout-cta:focus-visible {
+  outline: 3px solid rgba(0, 156, 62, 0.36);
+  outline-offset: 3px;
+}
+
 .card-spotlight {
   transition:
     transform 0.32s cubic-bezier(0.16, 1, 0.3, 1),

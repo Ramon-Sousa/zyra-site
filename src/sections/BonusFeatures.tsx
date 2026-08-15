@@ -1,47 +1,50 @@
-import imgDiet from '../assets/features/features-diet-screen.png'
-import imgFinances from '../assets/features/features-finances-screen.png'
-import imgHabits from '../assets/features/features-habits-screen.png'
-import imgPomodoro from '../assets/features/features-pomodoro-screen.png'
-import imgStudies from '../assets/features/features-studies-screen.png'
-import imgThemes from '../assets/features/features-themes.png'
-import imgWorkouts from '../assets/features/features-workouts-screen.png'
+const imgDiet = '/img dieta.png'
+const imgFinances = '/img financas.png'
+const imgHabits = '/img habitos.png'
+const imgPomodoro = '/img pomodo.png'
+const imgStudies = '/img estudos.png'
+const imgTasks = '/img tarefas.png'
+const imgWorkouts = '/img treinos.png'
 
 const BONUS_FEATURES = [
   {
     title: 'Hábitos',
-    description: 'Crie pequenas rotinas que diminuem a sensação de caos no dia.',
+    description:
+      'Acompanhe hábitos que está adicionando ou abandonando na sua nova rotina, veja seu progresso e constância sem depender de checklists ou planners.',
     image: imgHabits,
     featured: true,
   },
   {
     title: 'Finanças',
-    description: 'Organize contas e gastos para tirar mais uma preocupação da cabeça.',
+    description:
+      'Organize entradas, gastos, investimentos, assinaturas e cartões em um único lugar com alertas e recorrências.',
     image: imgFinances,
   },
   {
     title: 'Treinos',
-    description: 'Mantenha movimento e autocuidado dentro da mesma rotina.',
+    description: 'Monte sua rotina de exercícios, registre cargas e acompanhe sua evolução física com menos atrito.',
     image: imgWorkouts,
   },
   {
     title: 'Dieta',
-    description: 'Planeje escolhas simples para sustentar energia e disposição.',
+    description: 'Planeje refeições, salve receitas e acompanhe as calorias direto pelo app.',
     image: imgDiet,
   },
   {
     title: 'Estudos',
-    description: 'Transforme metas em blocos claros, sem sobrecarregar sua mente.',
+    description: 'Crie cadernos de estudos, separe suas anotações, abandone de vez os planners.',
     image: imgStudies,
   },
   {
     title: 'Pomodoro',
-    description: 'Proteja seu foco com ciclos leves de concentração e pausa.',
+    description: 'Adicione tarefas e hábitos direto do app e use ciclos de foco e pausa para proteger sua atenção.',
     image: imgPomodoro,
   },
   {
-    title: 'Temas',
-    description: 'Ajuste o visual do app para deixar sua organização mais confortável.',
-    image: imgThemes,
+    title: 'Tarefas',
+    description:
+      'Centralize pendências, prioridades e pequenas ações do dia para tirar peso da cabeça. O app irá fazer a priorização automática das tarefas conforme você cria.',
+    image: imgTasks,
   },
 ]
 
@@ -80,7 +83,7 @@ export default function BonusFeatures() {
                 feature.featured ? 'sm:col-span-2 lg:col-span-2' : ''
               }`}
             >
-              <div className="flex h-[320px] items-center justify-center overflow-hidden border-b border-[rgba(68,2,6,0.12)] bg-[#EFE2D2] p-1.5 sm:h-[280px] sm:p-3 lg:h-[250px]">
+              <div className="flex h-[320px] items-center justify-center overflow-hidden p-0 sm:h-[280px] lg:h-[250px]">
                 <img
                   src={feature.image}
                   alt=""

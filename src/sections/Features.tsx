@@ -1,27 +1,28 @@
-import imgDiet      from '../assets/features/features-diet-screen.png'
-import imgFinances  from '../assets/features/features-finances-screen.png'
-import imgHabits    from '../assets/features/features-habits-screen.png'
-import imgJournal   from '../assets/features/features-journal-mood-screen.png'
-import imgJournalReflection from '../assets/features/features-journal-reflection.png'
-import imgMoodControl from '../assets/features/features-mood-control.png'
-import imgPomodoro  from '../assets/features/features-pomodoro-screen.png'
-import imgStudies   from '../assets/features/features-studies-screen.png'
-import imgThemes   from '../assets/features/features-themes.png'
-import imgWorkouts  from '../assets/features/features-workouts-screen.png'
 import { StickyScroll } from '../components/ui/sticky-scroll-reveal'
+
+const imgDiet = '/img dieta.png'
+const imgFinances = '/img financas.png'
+const imgHabits = '/img habitos.png'
+const imgJournal = '/img humor.png'
+const imgJournalReflection = '/img humor-1.png'
+const imgMoodControl = '/img humor.png'
+const imgPomodoro = '/img pomodo.png'
+const imgStudies = '/img estudos.png'
+const imgTasks = '/img tarefas.png'
+const imgWorkouts = '/img treinos.png'
 
 const FEATURES = [
   {
     title: 'Hábitos',
     description:
-      'Crie hábitos positivos, acompanhe sua constância e veja seu progresso sem depender de planilhas ou anotações soltas.',
+      'Acompanhe hábitos que está adicionando ou abandonando na sua nova rotina, veja seu progresso e constância sem depender de checklists ou planners.',
     eyebrow: 'Consistência',
     content: <FeatureImage src={imgHabits} alt="Tela de hábitos do Zyra" />,
   },
   {
     title: 'Finanças',
     description:
-      'Organize entradas, gastos e prioridades financeiras no mesmo lugar em que você acompanha o resto da sua rotina.',
+      'Organize entradas, gastos, investimentos, assinaturas e cartões em um único lugar com alertas e recorrências.',
     eyebrow: 'Clareza',
     content: <FeatureImage src={imgFinances} alt="Tela de finanças do Zyra" />,
   },
@@ -33,54 +34,61 @@ const FEATURES = [
     content: <FeatureImage src={imgWorkouts} alt="Tela de treinos do Zyra" />,
   },
   {
-    title: 'Journal e Humor',
+    title: 'Journaling/Gratidões',
     description:
-      'Registre pensamentos, gratidão e humor diário para entender melhor seus ciclos, energia e emoções.',
-    eyebrow: 'Mente',
-    content: <FeatureImage src={imgJournal} alt="Tela de journal do Zyra" />,
+      'Exercite a gratidão e manifestação de suas metas, sonhos e melhorias na sua vida. Diariamente o app te traz reflexões para seu autoconhecimento.',
+    eyebrow: 'Autoconhecimento',
+    content: <FeatureImage src={imgJournalReflection} alt="Tela de journaling e gratidões do Zyra" />,
+  },
+  {
+    title: 'Humor',
+    description:
+      'Acompanhe seu estresse a cada dia, entenda que dias ruins virão, mas eles não vão tirar você do seu foco.',
+    eyebrow: 'Equilíbrio',
+    content: <FeatureImage src={imgJournal} alt="Tela de humor do Zyra" />,
   },
   {
     title: 'Dieta',
     description:
-      'Planeje refeições, organize escolhas alimentares e mantenha uma visão simples do que sustenta sua energia.',
+      'Planeje refeições, salve receitas e acompanhe as calorias direto pelo app.',
     eyebrow: 'Nutrição',
     content: <FeatureImage src={imgDiet} alt="Tela de dieta do Zyra" />,
   },
   {
     title: 'Estudos',
     description:
-      'Separe matérias, defina metas de estudo e acompanhe sessões para avançar com foco real.',
+      'Crie cadernos de estudos, separe suas anotações, abandone de vez os planners.',
     eyebrow: 'Aprendizado',
     content: <FeatureImage src={imgStudies} alt="Tela de estudos do Zyra" />,
   },
   {
     title: 'Pomodoro',
     description:
-      'Use ciclos de foco e pausa para proteger sua atenção e reduzir a sensação de rotina espalhada.',
+      'Adicione tarefas e hábitos direto do app e use ciclos de foco e pausa para proteger sua atenção.',
     eyebrow: 'Foco',
     content: <FeatureImage src={imgPomodoro} alt="Tela de pomodoro do Zyra" />,
   },
   {
-    title: 'Temas personalizados',
+    title: 'Tarefas',
     description:
-      'Ajuste cores, aparência e detalhes visuais para deixar o Zyra com a sua cara.',
-    eyebrow: 'Estilo',
-    content: <FeatureImage src={imgThemes} alt="Tela de temas do Zyra" />,
+      'Centralize pendências, prioridades e pequenas ações do dia para tirar peso da cabeça. O app irá fazer a priorização automática das tarefas conforme você cria.',
+    eyebrow: 'Organização',
+    content: <FeatureImage src={imgTasks} alt="Tela de tarefas do Zyra" />,
   },
 ]
 
 const HUMOR_FEATURES = [
   {
-    title: 'Journal',
+    title: 'Journaling/Gratidões',
     description:
-      'Registre pensamentos, gatilhos e reflexões do dia para tirar peso da cabeça e enxergar padrões antes que eles virem sobrecarga.',
+      'Exercite a gratidão e manifestação de suas metas, sonhos e melhorias na sua vida. Diariamente o app te traz reflexões para seu autoconhecimento.',
     eyebrow: 'Clareza emocional',
-    content: <FeatureImage src={imgJournalReflection} alt="Tela de journal do Zyra" fit="contain" />,
+    content: <FeatureImage src={imgJournalReflection} alt="Tela de journaling e gratidões do Zyra" fit="contain" />,
   },
   {
-    title: 'Controle de Estresse/Humor',
+    title: 'Humor',
     description:
-      'Acompanhe seu humor, entenda quando o estresse aparece e organize pequenas ações para recuperar leveza na rotina.',
+      'Acompanhe seu estresse a cada dia, entenda que dias ruins virão, mas eles não vão tirar você do seu foco.',
     eyebrow: 'Humor',
     content: <FeatureImage src={imgMoodControl} alt="Tela de controle de humor do Zyra" fit="contain" />,
   },
@@ -91,7 +99,7 @@ function FeatureImage({ src, alt, fit = 'cover' }: { src: string; alt: string; f
     <img
       src={src}
       alt={alt}
-      className={`h-full w-full rounded-[28px] border-[2px] border-[#F2E9DE] bg-[#F4ECE2] object-top shadow-[0_24px_80px_-12px_rgba(0,0,0,0.15)] ${
+      className={`h-full w-full object-top drop-shadow-[0_24px_60px_rgba(0,0,0,0.16)] ${
         fit === 'contain' ? 'object-contain' : 'object-cover'
       }`}
       draggable={false}

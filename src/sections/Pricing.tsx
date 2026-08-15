@@ -190,19 +190,10 @@ export default function Pricing({ variant = 'default' }: PricingProps) {
                   className="text-[14px] leading-[1.7] mb-6"
                   style={{ color: 'rgba(249,246,240,0.5)' }}
                 >
-                  {isHumor ? 'Journal, humor e organização pessoal em uma experiência simples.' : 'Acesso vitalício ao Zyra.'}
+                  {isHumor
+                    ? 'Journal, humor e organização pessoal em uma experiência simples.'
+                    : 'Economize mais de R$642,10 em assinaturas e retrabalhos centralizando tudo no Zyra.'}
                 </p>
-
-                <div
-                  className="inline-flex items-center rounded-full px-3 py-1 text-[11px] font-bold"
-                  style={{
-                    background: 'rgba(249,246,240,0.09)',
-                    border: '1px solid rgba(249,246,240,0.12)',
-                    color: '#D7C6A8',
-                  }}
-                >
-                  Economize R$ 642,10 no primeiro ano
-                </div>
               </div>
 
               <div className="relative flex justify-center sm:justify-end">
@@ -220,33 +211,77 @@ export default function Pricing({ variant = 'default' }: PricingProps) {
             </div>
 
             {/* Price */}
-            <div className="mb-8 rounded-[22px] p-5" style={{ background: 'rgba(249,246,240,0.06)', border: '1px solid rgba(249,246,240,0.1)' }}>
-              <div className="flex flex-wrap items-center gap-2 mb-3">
-                <span className="text-[12px] font-medium" style={{ color: 'rgba(249,246,240,0.45)' }}>
-                  De
-                </span>
-                <span className="text-[15px] font-semibold line-through decoration-[rgba(249,246,240,0.45)]" style={{ color: 'rgba(249,246,240,0.38)' }}>
-                  R$ 670/ano
-                </span>
-                <span className="text-[12px] font-medium" style={{ color: 'rgba(249,246,240,0.45)' }}>
-                  por acesso vitalício
+            <div
+              className="mb-8 rounded-[24px] px-5 py-5 sm:px-6 sm:py-6"
+              style={{
+                background: 'linear-gradient(180deg, rgba(249,246,240,0.085), rgba(249,246,240,0.045))',
+                border: '1px solid rgba(249,246,240,0.13)',
+                boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.06)',
+              }}
+            >
+              <div className="mb-5 flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
+                <div className="flex items-baseline gap-2">
+                  <span className="text-[12px] font-medium" style={{ color: 'rgba(249,246,240,0.42)' }}>
+                    De
+                  </span>
+                  <span
+                    className="text-[16px] font-semibold leading-none line-through decoration-[rgba(249,246,240,0.45)] decoration-2"
+                    style={{ color: 'rgba(249,246,240,0.42)', fontVariantNumeric: 'tabular-nums' }}
+                  >
+                    R$ 670/ano
+                  </span>
+                </div>
+                <span
+                  className="text-left text-[11px] font-bold uppercase tracking-[0.14em] sm:text-right"
+                  style={{ color: '#D7C6A8' }}
+                >
+                  acesso vitalício
                 </span>
               </div>
-              <p
-                className="text-[15px] font-semibold mb-1"
-                style={{ color: 'rgba(249,246,240,0.6)' }}
-              >
-                Até 3x de
-              </p>
-              <p
-                className="text-[clamp(44px,6vw,62px)] font-semibold leading-none"
-                style={{ fontFamily: "var(--font-serif)", color: 'var(--color-surface-page)', letterSpacing: '-1.5px' }}
-              >
-                R$ 9,30
-              </p>
-              <p className="text-[13px] mt-3" style={{ color: 'rgba(249,246,240,0.45)' }}>
-                ou R$ 27,90 à vista
-              </p>
+
+              <div className="mb-5" style={{ borderTop: '1px solid rgba(249,246,240,0.1)' }} />
+
+              <div className="flex items-end justify-between gap-4">
+                <div>
+                  <p
+                    className="mb-1 text-[13px] font-semibold uppercase tracking-[0.12em]"
+                    style={{ color: 'rgba(249,246,240,0.5)' }}
+                  >
+                    Até 3x de
+                  </p>
+                  <div className="flex items-baseline gap-2">
+                    <span
+                      className="text-[clamp(28px,4vw,38px)] font-semibold leading-none"
+                      style={{ fontFamily: "var(--font-serif)", color: 'var(--color-surface-page)' }}
+                    >
+                      R$
+                    </span>
+                    <span
+                      className="text-[clamp(58px,9vw,82px)] font-semibold leading-[0.86]"
+                      style={{
+                        fontFamily: "var(--font-serif)",
+                        color: 'var(--color-surface-page)',
+                        letterSpacing: '-1px',
+                        fontVariantNumeric: 'tabular-nums',
+                      }}
+                    >
+                      9,30
+                    </span>
+                  </div>
+                </div>
+
+                <div className="pb-1 text-right">
+                  <p className="text-[12px] font-medium" style={{ color: 'rgba(249,246,240,0.42)' }}>
+                    à vista
+                  </p>
+                  <p
+                    className="text-[18px] font-semibold leading-tight"
+                    style={{ color: '#D7C6A8', fontVariantNumeric: 'tabular-nums' }}
+                  >
+                    R$ 27,90
+                  </p>
+                </div>
+              </div>
             </div>
 
             {/* CTA */}
@@ -254,12 +289,7 @@ export default function Pricing({ variant = 'default' }: PricingProps) {
               href={checkoutUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-fill flex min-h-[52px] w-full items-center justify-center gap-2 rounded-[24px] px-4 py-3 text-center text-[14px] font-semibold leading-tight transition-all active:scale-[0.98] mb-8"
-              style={{
-                background: 'var(--color-surface-page)',
-                color: 'var(--color-brand-burgundy)',
-                boxShadow: '0 8px 28px rgba(0,0,0,0.22)',
-              }}
+              className="btn-fill checkout-cta mb-8 flex min-h-[52px] w-full items-center justify-center gap-2 rounded-[24px] px-4 py-3 text-center text-[14px] font-semibold leading-tight transition-all hover:-translate-y-0.5 active:scale-[0.98]"
             >
               Estou pronta para começar!
               <svg width="13" height="13" viewBox="0 0 13 13" fill="none">
