@@ -3,6 +3,7 @@ import { createRoot } from 'react-dom/client'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import './index.css'
 import Home from './pages/Home'
+import SpecialOffer from './pages/SpecialOffer'
 
 // Wire scroll-reveal IntersectionObserver after DOM is ready
 function mountScrollReveal() {
@@ -24,6 +25,7 @@ createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <BrowserRouter>
       <Routes>
+        <Route path="/ofertaespecial" element={<SpecialOffer />} />
         <Route path="/humor" element={<Home variant="humor" />} />
         <Route path="*" element={<Home />} />
       </Routes>

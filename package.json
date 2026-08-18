@@ -10,6 +10,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "verify:campaign": "node scripts/verify-campaign-params.mjs",
+    "test": "node --experimental-strip-types --test tests/**/*.test.ts",
     "preview:hostinger": "vite preview --host 0.0.0.0",
     "verify:static": "node scripts/verify-static-build.mjs"
   },

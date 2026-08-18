@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import Nav from '../components/Nav'
 import Footer from '../components/Footer'
 import Hero from '../sections/Hero'
@@ -10,6 +11,8 @@ import CostBreakdown from '../sections/CostBreakdown'
 import Pricing from '../sections/Pricing'
 import FAQ from '../sections/FAQ'
 import FinalCTA from '../sections/FinalCTA'
+import { persistCurrentPaidUtmParams } from '../lib/campaignParams'
+import { useBackRedirect } from '../hooks/useBackRedirect'
 
 type HomeProps = {
   variant?: 'default' | 'humor'
@@ -17,6 +20,12 @@ type HomeProps = {
 
 export default function Home({ variant = 'default' }: HomeProps) {
   const isHumor = variant === 'humor'
+
+  useBackRedirect()
+
+  useEffect(() => {
+    persistCurrentPaidUtmParams()
+  }, [])
 
   return (
     <>

@@ -41,6 +41,16 @@ function storePaidUtmParams(params: URLSearchParams) {
   }
 }
 
+export function persistCurrentPaidUtmParams() {
+  if (typeof window === 'undefined') return
+
+  const currentUtms = collectUtmParams(new URLSearchParams(window.location.search))
+
+  if (hasUtmParams(currentUtms) && !isOrganicAttribution(currentUtms)) {
+    storePaidUtmParams(currentUtms)
+  }
+}
+
 export function appendCurrentUtmParams(url: string): string {
   if (typeof window === 'undefined') return url
 
@@ -58,9 +68,7 @@ export function appendCurrentUtmParams(url: string): string {
         ? storedPaidUtms
         : currentUtms
 
-    if (!currentIsOrganic && hasCurrentUtms) {
-      storePaidUtmParams(currentUtms)
-    }
+    if (!currentIsOrganic && hasCurrentUtms) storePaidUtmParams(currentUtms)
 
     for (const [key, value] of utmsToApply.entries()) {
       checkoutUrl.searchParams.set(key, value)
