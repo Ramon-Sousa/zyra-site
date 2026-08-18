@@ -26,5 +26,6 @@ dist-ssr
 .agents
 .claude
 .firecrawl
+.worktrees
 
 design_system.md
