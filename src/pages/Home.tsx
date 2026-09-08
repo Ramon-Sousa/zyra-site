@@ -19,8 +19,6 @@ type HomeProps = {
 }
 
 export default function Home({ variant = 'default' }: HomeProps) {
-  const isHumor = variant === 'humor'
-
   useBackRedirect()
 
   useEffect(() => {
@@ -35,7 +33,7 @@ export default function Home({ variant = 'default' }: HomeProps) {
         <SocialProof />
         <Problem variant={variant} />
         <Features variant={variant} />
-        {isHumor ? <BonusFeatures /> : null}
+        <BonusFeatures />
         <Testimonials />
         <div className="flex flex-col gap-6 sm:gap-8 py-12 sm:py-16">
           <CostBreakdown variant={variant} />

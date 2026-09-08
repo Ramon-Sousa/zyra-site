@@ -1,118 +1,12 @@
-const imgDiet = '/img/dieta.webp'
-const imgFinances = '/img/financas.webp'
-const imgHabits = '/img/habitos.webp'
-const imgPomodoro = '/img/pomodo.webp'
-const imgStudies = '/img/estudos.webp'
-const imgTasks = '/img/tarefas.webp'
-const imgWorkouts = '/img/treinos.webp'
-
 const BONUS_FEATURES = [
-  {
-    title: 'Hábitos',
-    description:
-      'Acompanhe hábitos que está adicionando ou abandonando na sua nova rotina, veja seu progresso e constância sem depender de checklists ou planners.',
-    image: imgHabits,
-    featured: true,
-  },
-  {
-    title: 'Finanças',
-    description:
-      'Organize entradas, gastos, investimentos, assinaturas e cartões em um único lugar com alertas e recorrências.',
-    image: imgFinances,
-  },
-  {
-    title: 'Treinos',
-    description: 'Monte sua rotina de exercícios, registre cargas e acompanhe sua evolução física com menos atrito.',
-    image: imgWorkouts,
-  },
-  {
-    title: 'Dieta',
-    description: 'Planeje refeições, salve receitas e acompanhe as calorias direto pelo app.',
-    image: imgDiet,
-  },
-  {
-    title: 'Estudos',
-    description: 'Crie cadernos de estudos, separe suas anotações, abandone de vez os planners.',
-    image: imgStudies,
-  },
-  {
-    title: 'Pomodoro',
-    description: 'Adicione tarefas e hábitos direto do app e use ciclos de foco e pausa para proteger sua atenção.',
-    image: imgPomodoro,
-  },
-  {
-    title: 'Tarefas',
-    description:
-      'Centralize pendências, prioridades e pequenas ações do dia para tirar peso da cabeça. O app irá fazer a priorização automática das tarefas conforme você cria.',
-    image: imgTasks,
-  },
-]
+  { title: 'Treino Pilates em casa', description: 'Aulas guiadas para fortalecer, alongar e treinar sem sair de casa.', price: 'R$ 39,90', image: '/img/bonuses/pilates-em-casa.jpg' },
+  { title: '48 fichas de treinos de musculação + Cardio', description: 'Treinos prontos para variar a rotina e evoluir com mais consistência.', price: 'R$ 59,90', image: '/img/bonuses/musculacao-cardio.jpg' },
+  { title: '102 Receitas Práticas para Air Fryer', description: 'Receitas rápidas e práticas para aproveitar sua Air Fryer no dia a dia.', price: 'R$ 29,90', image: '/img/bonuses/receitas-air-fryer.jpg' },
+  { title: '200 Receitas Fit e Saudáveis', description: 'Opções equilibradas para comer bem sem abrir mão do sabor.', price: 'R$ 49,90', image: '/img/bonuses/receitas-fit.jpg' },
+  { title: '200 Receitas de Café da Manhã Nutritivas', description: 'Ideias simples para começar o dia com mais energia e saciedade.', price: 'R$ 39,90', image: '/img/bonuses/receitas-cafe-da-manha.jpg' },
+  { title: '100 Receitas Lowcarb práticas', description: 'Receitas práticas com menos carboidratos para facilitar sua rotina.', price: 'R$ 39,90', image: '/img/bonuses/receitas-lowcarb.jpg' },
+] as const
 
 export default function BonusFeatures() {
-  return (
-    <section id="bonus" className="scroll-mt-24 px-5 pb-16 sm:pb-24 bg-[var(--color-surface-page)]">
-      <div className="max-w-5xl mx-auto">
-        <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between mb-10">
-          <div>
-            <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-[var(--color-brand-burgundy)] mb-4">
-              Bônus incluso
-            </p>
-            <h2
-              className="text-[clamp(30px,4vw,50px)] font-semibold text-[var(--color-text-primary)] leading-[1.06] max-w-2xl"
-              style={{ fontFamily: 'var(--font-serif)', letterSpacing: '-1.2px' }}
-            >
-              Mais recursos para aliviar a rotina
-              <em className="italic text-[var(--color-brand-burgundy)]"> dentro do mesmo acesso.</em>
-            </h2>
-          </div>
-
-          <a
-            href="#pricing"
-            className="inline-flex h-[52px] shrink-0 items-center justify-center rounded-[26px] bg-[var(--color-brand-burgundy)] px-6 text-[14px] font-semibold text-[var(--color-surface-page)] transition-all hover:-translate-y-0.5 active:scale-[0.97]"
-            style={{ boxShadow: '0 8px 28px rgba(68,2,6,0.2)' }}
-          >
-            Ver oferta
-          </a>
-        </div>
-
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {BONUS_FEATURES.map((feature) => (
-            <article
-              key={feature.title}
-              className={`flex min-h-full flex-col overflow-hidden rounded-[24px] border border-[rgba(68,2,6,0.16)] bg-[#FFF9F1] shadow-[0_18px_48px_-28px_rgba(68,2,6,0.45)] ${
-                feature.featured ? 'sm:col-span-2 lg:col-span-2' : ''
-              }`}
-            >
-              <div className="flex h-[320px] items-center justify-center overflow-hidden p-0 sm:h-[280px] lg:h-[250px]">
-                <img
-                  src={feature.image}
-                  alt=""
-                  loading="lazy"
-                  decoding="async"
-                  className="h-full w-full object-contain object-center drop-shadow-[0_16px_26px_rgba(68,2,6,0.18)]"
-                  draggable={false}
-                />
-              </div>
-              <div className="flex flex-1 flex-col p-5 sm:p-6">
-                <div className="mb-4 flex items-center justify-between gap-3">
-                  <h3
-                    className="text-[22px] font-semibold leading-tight text-[var(--color-text-primary)]"
-                    style={{ fontFamily: 'var(--font-serif)', letterSpacing: '-0.4px' }}
-                  >
-                    {feature.title}
-                  </h3>
-                  <div className="inline-flex shrink-0 items-center rounded-full bg-[var(--color-brand-burgundy)] px-3 py-1 text-[11px] font-bold text-[var(--color-surface-page)]">
-                    Incluso
-                  </div>
-                </div>
-                <p className="text-[13px] leading-[1.65] text-[rgba(38,29,24,0.72)]">
-                  {feature.description}
-                </p>
-              </div>
-            </article>
-          ))}
-        </div>
-      </div>
-    </section>
-  )
+  return <section id="bonus" className="scroll-mt-24 bg-[var(--color-surface-page)] px-5 pb-16 pt-8 sm:pb-24 sm:pt-12"><div className="mx-auto max-w-5xl"><div className="mb-10 text-center"><p className="mb-4 text-[11px] font-bold uppercase tracking-[0.22em] text-[var(--color-brand-burgundy)]">Incluídos no plano completo</p><h2 className="text-[clamp(30px,4vw,50px)] font-semibold leading-[1.06] text-[var(--color-text-primary)]" style={{ fontFamily: 'var(--font-serif)', letterSpacing: '-1.2px' }}>Bônus exclusivos para <em className="italic text-[var(--color-brand-burgundy)]">deixar sua rotina mais leve.</em></h2><p className="mx-auto mt-4 max-w-xl text-[15px] leading-[1.7] text-[var(--color-text-secondary)]">Todos os bônus são liberados diretamente no app junto com o seu acesso vitalício.</p></div><div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">{BONUS_FEATURES.map((feature) => <article key={feature.title} className="flex min-h-full flex-col overflow-hidden rounded-[24px] border border-[rgba(68,2,6,0.16)] bg-[#FFF9F1] shadow-[0_18px_48px_-28px_rgba(68,2,6,0.45)]"><div className="aspect-[2/1] overflow-hidden bg-[var(--color-surface-subtle)]"><img src={feature.image} alt="" loading="lazy" decoding="async" className="h-full w-full object-cover" draggable={false} /></div><div className="flex flex-1 flex-col p-5 sm:p-6"><div className="mb-3 flex items-start justify-between gap-3"><h3 className="text-[20px] font-semibold leading-tight text-[var(--color-text-primary)]" style={{ fontFamily: 'var(--font-serif)' }}>{feature.title}</h3><span className="shrink-0 rounded-md bg-[var(--color-brand-burgundy)] px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.06em] text-white">Grátis</span></div><p className="text-[13px] leading-[1.65] text-[rgba(38,29,24,0.72)]">{feature.description}</p><p className="mt-auto pt-4 text-[13px] font-bold text-[var(--color-text-muted)] line-through">{feature.price}</p></div></article>)}</div></div></section>
 }
