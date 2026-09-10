@@ -1,8 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { SpeakerHigh, SpeakerSlash } from '@phosphor-icons/react'
-import { appendCurrentUtmParams } from '../lib/campaignParams'
 
-const CHECKOUT_URL = 'https://pay.cakto.com.br/kse9sb5'
 const VIDEO_URL = 'https://meuglowmode.site/server/assets/videos/vsl-lp-zyra.mp4'
 
 const clamp = (value: number, min: number, max: number) => Math.min(Math.max(value, min), max)
@@ -51,7 +49,6 @@ export default function Problem({ variant = 'default' }: ProblemProps) {
   const [progress, setProgress] = useState(0)
   const [isMuted, setIsMuted] = useState(true)
   const [videoAspectRatio, setVideoAspectRatio] = useState('9 / 16')
-  const ctaHref = appendCurrentUtmParams(CHECKOUT_URL)
 
   const playVideo = useCallback(() => {
     const video = videoRef.current
@@ -317,9 +314,7 @@ export default function Problem({ variant = 'default' }: ProblemProps) {
 
         <div className="mt-7 flex justify-center">
           <a
-            href={ctaHref}
-            target="_blank"
-            rel="noopener noreferrer"
+            href="#pricing"
             className="btn-fill checkout-cta inline-flex h-[52px] w-full max-w-[420px] items-center justify-center rounded-[28px] px-7 text-[14px] font-semibold transition-all duration-200 hover:-translate-y-0.5 active:scale-[0.97]"
           >
             {copy.cta}

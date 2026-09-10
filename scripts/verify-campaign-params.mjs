@@ -4,8 +4,7 @@ const conversionSections = [
   {
     path: 'src/sections/Problem.tsx',
     required: [
-      "import { appendCurrentUtmParams } from '../lib/campaignParams'",
-      "appendCurrentUtmParams(CHECKOUT_URL)",
+      'href="#pricing"',
     ],
   },
   {
@@ -19,7 +18,14 @@ const conversionSections = [
     path: 'src/sections/Pricing.tsx',
     required: [
       "import { appendCurrentUtmParams } from '../lib/campaignParams'",
-      "appendCurrentUtmParams(CHECKOUT_URL)",
+      'https://pay.lowify.com.br/checkout?product_id=sKQ4sm',
+    ],
+  },
+  {
+    path: 'src/pages/SpecialOffer.tsx',
+    required: [
+      'https://pay.lowify.com.br/go.php?offer=31af78ea',
+      "../assets/offer/offer-card-visual.webp",
     ],
   },
 ]
@@ -46,8 +52,8 @@ if (!helperSource.includes('utm_medium') || !helperSource.includes('organic')) {
 for (const section of conversionSections) {
   const source = readFileSync(section.path, 'utf8')
 
-  if (section.path === 'src/sections/Problem.tsx' && source.includes("#pricing")) {
-    console.error('src/sections/Problem.tsx VSL CTA must link directly to checkout for every page variant.')
+  if (section.path === 'src/sections/Problem.tsx' && source.includes('pay.cakto.com.br')) {
+    console.error('src/sections/Problem.tsx VSL CTA must not send visitors to the retired Cakto checkout.')
     failed = true
   }
 

@@ -1,7 +1,8 @@
 import { useEffect, useMemo, useState } from 'react'
 import { appendCurrentUtmParams } from '../lib/campaignParams'
+import offerCardVisual from '../assets/offer/offer-card-visual.webp'
 
-const CHECKOUT_URL = 'https://pay.cakto.com.br/3d6itjb'
+const CHECKOUT_URL = 'https://pay.lowify.com.br/go.php?offer=31af78ea'
 const INITIAL_TIME_IN_SECONDS = 15 * 60
 
 const BENEFITS = [
@@ -109,14 +110,17 @@ export default function SpecialOffer() {
                 </p>
                 <p className="mt-5 text-[13px] font-bold uppercase tracking-[0.14em] text-[#D7C6A8]">A única diferença é o preço reduzido pela metade.</p>
               </div>
-              <ul className="grid gap-3 rounded-[22px] border border-[rgba(249,246,240,0.11)] bg-[rgba(249,246,240,0.045)] p-5">
+              <div className="flex flex-col items-center gap-5">
+                <div className="relative flex justify-center"><div className="absolute inset-x-8 bottom-3 h-14 rounded-full bg-[rgba(249,246,240,0.14)] blur-2xl" /><img src={offerCardVisual} alt="Prévia do Zyra" className="relative w-full max-w-[200px] drop-shadow-[0_24px_32px_rgba(0,0,0,0.35)]" loading="lazy" draggable={false} /></div>
+                <ul className="grid w-full gap-3 rounded-[22px] border border-[rgba(249,246,240,0.11)] bg-[rgba(249,246,240,0.045)] p-5">
                 {BENEFITS.map((benefit) => (
                   <li key={benefit} className="flex items-center gap-3 text-[14px] text-[rgba(249,246,240,0.76)]">
                     <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[rgba(215,198,168,0.14)] text-[#D7C6A8]"><CheckIcon /></span>
                     {benefit}
                   </li>
                 ))}
-              </ul>
+                </ul>
+              </div>
             </div>
 
             <a href={checkoutUrl} target="_blank" rel="noopener noreferrer" className="btn-fill checkout-cta flex min-h-[60px] w-full items-center justify-center gap-2 rounded-[22px] px-5 py-4 text-center text-[15px] font-bold transition-all hover:-translate-y-0.5 active:scale-[0.98]">
