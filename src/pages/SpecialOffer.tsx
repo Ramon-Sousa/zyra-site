@@ -109,6 +109,7 @@ export default function SpecialOffer() {
                   Sim, é isso mesmo. Você sabe quanto custa o valor original. Agora você pode garantir por 50% do preço – oferta única, exclusiva e que não estará disponível novamente. Se você recusar aqui, o preço volta ao normal.
                 </p>
                 <p className="mt-5 text-[13px] font-bold uppercase tracking-[0.14em] text-[#D7C6A8]">A única diferença é o preço reduzido pela metade.</p>
+                <p className="mt-3 text-[36px] font-semibold leading-none text-[var(--color-surface-page)]" style={{ fontFamily: 'var(--font-serif)' }}>R$ 29,90</p>
               </div>
               <div className="flex flex-col items-center gap-5">
                 <div className="relative flex justify-center"><div className="absolute inset-x-8 bottom-3 h-14 rounded-full bg-[rgba(249,246,240,0.14)] blur-2xl" /><img src={offerCardVisual} alt="Prévia do Zyra" className="relative w-full max-w-[200px] drop-shadow-[0_24px_32px_rgba(0,0,0,0.35)]" loading="lazy" draggable={false} /></div>
