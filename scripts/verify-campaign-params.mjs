@@ -18,13 +18,13 @@ const conversionSections = [
     path: 'src/sections/Pricing.tsx',
     required: [
       "import { appendCurrentUtmParams } from '../lib/campaignParams'",
-      'https://pay.lowify.com.br/checkout?product_id=sKQ4sm',
+      'https://pay.meuglowmode.site/checkout/v5/fRHH3cKjcuSYO1sIDArR',
     ],
   },
   {
     path: 'src/pages/SpecialOffer.tsx',
     required: [
-      'https://pay.lowify.com.br/go.php?offer=31af78ea',
+      'https://pay.meuglowmode.site/checkout/v5/MKw5xIFyMIUd529BMutr',
       "../assets/offer/offer-card-visual.webp",
     ],
   },

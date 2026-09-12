@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState } from 'react'
 import { appendCurrentUtmParams } from '../lib/campaignParams'
 import offerCardVisual from '../assets/offer/offer-card-visual.webp'
 
-const CHECKOUT_URL = 'https://pay.lowify.com.br/go.php?offer=31af78ea'
+const CHECKOUT_URL = 'https://pay.meuglowmode.site/checkout/v5/MKw5xIFyMIUd529BMutr'
 const INITIAL_TIME_IN_SECONDS = 15 * 60
 
 const BENEFITS = [

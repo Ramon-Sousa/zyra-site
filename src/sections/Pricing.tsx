@@ -2,9 +2,9 @@ import { useState } from 'react'
 import { appendCurrentUtmParams } from '../lib/campaignParams'
 import offerCardVisual from '../assets/offer/offer-card-visual.webp'
 
-const COMPLETE_CHECKOUT = 'https://pay.lowify.com.br/checkout.php?product_id=MW7fBG'
-const UPGRADE_CHECKOUT = 'https://pay.lowify.com.br/go.php?offer=0g865el'
-const ESSENTIAL_CHECKOUT = 'https://pay.lowify.com.br/checkout?product_id=sKQ4sm'
+const COMPLETE_CHECKOUT = 'https://pay.meuglowmode.site/checkout/v5/brfpODwpWq8xHlLVGwn4'
+const UPGRADE_CHECKOUT = 'https://pay.meuglowmode.site/checkout/v5/vchTLDDSJPvRSd26ejYZ'
+const ESSENTIAL_CHECKOUT = 'https://pay.meuglowmode.site/checkout/v5/fRHH3cKjcuSYO1sIDArR'
 
 const CORE_FEATURES = ['Acesso vitalício ao Zyra', 'Desafio personalizado de rotina', 'Rastreador de hábitos', 'Centralizador de tarefas', 'Organizador de treinos', 'Journal diário', 'Controle financeiro', 'Temas personalizados', 'Notificações em tempo real']
 const BONUS_NAMES = ['Treino Pilates em casa', '48 fichas de treinos de musculação + Cardio', '102 Receitas Práticas para Air Fryer', '200 Receitas Fit e Saudáveis', '200 Receitas de Café da Manhã Nutritivas', '100 Receitas Lowcarb práticas']
